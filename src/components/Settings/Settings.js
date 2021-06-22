@@ -11,6 +11,9 @@ function Settings({ style }) {
           <SettingsButton time={preset.fiveSec}>5 сек</SettingsButton>
         </li>
         <li>
+          <SettingsButton time={preset.tenSec}>10 сек</SettingsButton>
+        </li>
+        <li>
           <SettingsButton time={preset.oneMin}>1 мин</SettingsButton>
         </li>
         <li>
