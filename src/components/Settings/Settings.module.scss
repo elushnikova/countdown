@@ -1,6 +1,12 @@
 $main: #001d3d;
 $accent: #ffd60a;
 
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
 .block {
   position: absolute;
   background-color: inherit;
