@@ -9,7 +9,8 @@ import preset from "../Timer/utils/preset";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const [ms, setMs] = useState(preset.tenMin);
+  const [time, setTime] = useState(preset.tenMin);
+
   const transitions = useTransition(open, {
     from: { opacity: 0, right: -200 },
     to: { opacity: 1, right: 0 },
@@ -19,7 +20,7 @@ function App() {
   });
 
   return (
-    <TimerContext.Provider value={{ ms, setMs }}>
+    <TimerContext.Provider value={{ time, setTime }}>
       <main className={styles.container}>
         <Toggle open={open} setOpen={setOpen} />
         <Timer />

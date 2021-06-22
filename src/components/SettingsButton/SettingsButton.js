@@ -3,10 +3,10 @@ import TimerContext from "../../contexts/TimerContext";
 import styles from "./SettingsButton.module.scss";
 
 function SettingsButton({ time, children }) {
-  const { setMs } = useContext(TimerContext);
+  const { setTime } = useContext(TimerContext);
 
   return (
-    <button onClick={() => setMs(time)} className={styles.button}>
+    <button onClick={() => setTime(time)} className={styles.button}>
       {children}
     </button>
   );

@@ -12,36 +12,36 @@ import styles from "./Timer.module.scss";
 import TimerContext from "../../contexts/TimerContext";
 
 function Timer() {
-  const { ms, setMs } = useContext(TimerContext);
+  const { time, setTime } = useContext(TimerContext);
 
   useEffect(() => {
-    if (!ms) return;
+    if (!time) return;
 
     const id = setTimeout(() => {
-      setMs(subtractSecond);
+      setTime(subtractSecond);
     }, second);
 
     return () => {
       clearTimeout(id);
     };
-  }, [ms, setMs]);
+  }, [time, setTime]);
 
   return (
     <>
-      {ms ? (
+      {time ? (
         <div
-          className={`${styles.time} ${lessThanMinute(ms) && styles.single}`}
+          className={`${styles.time} ${lessThanMinute(time) && styles.single}`}
         >
-          {!lessThanMinute(ms) && (
+          {!lessThanMinute(time) && (
             <>
               <span className={styles.minutes}>
-                {padNumber(truncate(divideByMinute(ms)))}
+                {padNumber(truncate(divideByMinute(time)))}
               </span>
               <span className={styles.separator}>:</span>
             </>
           )}
           <span className={styles.seconds}>
-            {padNumber(moduloByMinute(ms) / second)}
+            {padNumber(moduloByMinute(time) / second)}
           </span>
         </div>
       ) : (
