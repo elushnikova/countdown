@@ -1,4 +1,4 @@
-import Countdown from "./Countdown";
+import Countdown from "./Countdown/Countdown";
 
 function App() {
   return (
