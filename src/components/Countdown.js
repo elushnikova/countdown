@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 function Countdown() {
   const sec = 1000;
   const [ms, setMs] = useState(60 * sec);
-  const minusSecond = (prev) => prev - sec;
+  const subtractSecond = (prev) => prev - sec;
 
   useEffect(() => {
     if (!ms) return;
-    const id = setTimeout(() => setMs(minusSecond), sec);
+    const id = setTimeout(() => setMs(subtractSecond), sec);
     return () => clearTimeout(id);
   }, [ms]);
 
