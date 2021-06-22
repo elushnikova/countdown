@@ -1,11 +1,9 @@
-import Fade from "./Fade";
-import Rotate from "./Rotate";
+import Countdown from "./Countdown";
 
 function App() {
   return (
     <main style={{ width: 300, margin: "0 auto" }}>
-      <Fade />
-      <Rotate />
+      <Countdown />
     </main>
   );
 }
