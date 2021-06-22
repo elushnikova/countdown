@@ -24,6 +24,10 @@ function lessThanMinute(ms) {
   return ms < minute;
 }
 
+function lessThanTenSec(ms) {
+  return ms < 10 * second;
+}
+
 export {
   subtractSecond,
   divideByMinute,
@@ -31,4 +35,5 @@ export {
   truncate,
   padNumber,
   lessThanMinute,
+  lessThanTenSec,
 };

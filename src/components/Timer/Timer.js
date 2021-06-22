@@ -7,6 +7,7 @@ import {
   divideByMinute,
   moduloByMinute,
   lessThanMinute,
+  lessThanTenSec,
 } from "./utils/lib";
 import styles from "./Timer.module.scss";
 import TimerContext from "../../contexts/TimerContext";
@@ -40,8 +41,11 @@ function Timer() {
               <span className={styles.separator}>:</span>
             </>
           )}
+
           <span className={styles.seconds}>
-            {padNumber(moduloByMinute(time) / second)}
+            {lessThanTenSec(time)
+              ? moduloByMinute(time) / second
+              : padNumber(moduloByMinute(time) / second)}
           </span>
         </div>
       ) : (
