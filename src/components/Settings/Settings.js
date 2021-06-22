@@ -2,18 +2,29 @@ import { useContext } from "react";
 import { animated } from "react-spring";
 import TimerContext from "../../contexts/TimerContext";
 import SettingsButton from "../SettingsButton/SettingsButton";
-import preset from "../Timer/utils/preset";
+import preset, { second } from "../Timer/utils/preset";
 import classes from "./Settings.module.scss";
 
 function Settings({ style, isInverted }) {
-  const { setOpen } = useContext(TimerContext);
+  const { setOpen, closeTimeout, setCloseTimeout } = useContext(TimerContext);
+
+  function handleSettingsClick(e) {
+    e.stopPropagation();
+    clearTimeout(closeTimeout);
+
+    const timeoutId = setTimeout(() => {
+      setOpen(false);
+    }, 5 * second);
+
+    setCloseTimeout(timeoutId);
+  }
 
   return (
     <div className={classes.overlay} onClick={() => setOpen(false)}>
       <animated.div
         className={`${classes.block} ${isInverted && classes.inverted}`}
         style={style}
-        onClick={(e) => e.stopPropagation()}
+        onClick={handleSettingsClick}
       >
         <ul className={classes.list}>
           <li>
