@@ -7,7 +7,7 @@ import styles from "./Toggle.module.scss";
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
-function Toggle() {
+function Toggle({ isInverted }) {
   const { open, setOpen } = useContext(TimerContext);
   const [id, setId] = useState();
 
@@ -26,7 +26,7 @@ function Toggle() {
 
   return (
     <>
-      <label className={styles.toggle}>
+      <label className={`${styles.toggle} ${isInverted && styles.inverted}`}>
         <input type="checkbox" checked={open} onChange={handleChange} />
         <div>
           <div>
