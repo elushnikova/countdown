@@ -3,9 +3,9 @@ import SettingsButton from "../SettingsButton/SettingsButton";
 import preset from "../Timer/utils/preset";
 import classes from "./Settings.module.scss";
 
-function Settings({ styles }) {
+function Settings({ style }) {
   return (
-    <animated.div className={classes.block} styles={styles}>
+    <animated.div className={classes.block} style={style}>
       <ul className={classes.list}>
         <li>
           <SettingsButton time={preset.fiveSec}>5 сек</SettingsButton>
