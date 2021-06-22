@@ -4,7 +4,7 @@ import classes from "./TimeOver.module.scss";
 function TimeOver({ style }) {
   return (
     <animated.div style={style} className={classes.block}>
-      Перерыв закончен
+      Перерыв<br/>закончен
     </animated.div>
   );
 }

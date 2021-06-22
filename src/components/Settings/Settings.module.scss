@@ -1,5 +1,6 @@
 $main: #001d3d;
 $accent: #ffd60a;
+$shadowWidth: 0.5rem;
 
 .overlay {
   width: 100vw;
@@ -15,15 +16,17 @@ $accent: #ffd60a;
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
-  max-width: 320px;
+  max-width: 200px;
   padding: 2rem;
   overflow-y: auto;
-  box-shadow: 0 0 1rem 0 black;
+  box-shadow: black 0px 20px 30px -10px;
+  display: flex;
+  align-items: center;
 }
 
 .block.inverted {
   background-color: $accent;
-  box-shadow: 0 0 1rem 0 $main;
+  box-shadow: $main 0px 20px 30px -10px;
 }
 
 .list {
