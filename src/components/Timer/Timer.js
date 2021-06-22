@@ -31,7 +31,7 @@ function Timer() {
     <>
       {Boolean(time) && (
         <div
-          className={`${styles.time} ${lessThanMinute(time) && styles.single}`}
+          className={`${styles.block} ${lessThanMinute(time) && styles.single}`}
         >
           {!lessThanMinute(time) && (
             <>
@@ -48,10 +48,6 @@ function Timer() {
               : padNumber(moduloByMinute(time) / second)}
           </span>
         </div>
-        // ) : (
-        // <div className={`${styles.time} ${styles.single} ${styles.over}`}>
-        //   Перерыв окончен
-        // </div>
       )}
     </>
   );
