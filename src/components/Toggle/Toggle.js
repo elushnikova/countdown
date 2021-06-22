@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import TimerContext from "../../contexts/TimerContext";
 import { second } from "../Timer/utils/preset";
 import styles from "./Toggle.module.scss";
@@ -8,21 +8,21 @@ import styles from "./Toggle.module.scss";
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
 function Toggle({ isInverted }) {
-  const { open, setOpen } = useContext(TimerContext);
-  const [id, setId] = useState();
+  const { open, setOpen, closeTimeout, setCloseTimeout } =
+    useContext(TimerContext);
 
   function handleChange() {
     const timeoutId = setTimeout(() => {
       setOpen(false);
     }, 5 * second);
 
-    setId(timeoutId);
+    setCloseTimeout(timeoutId);
     setOpen(!open);
   }
 
   useEffect(() => {
-    return () => clearTimeout(id);
-  }, [id]);
+    return () => clearTimeout(closeTimeout);
+  }, [closeTimeout]);
 
   return (
     <>

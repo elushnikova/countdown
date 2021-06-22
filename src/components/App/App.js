@@ -10,6 +10,7 @@ import preset from "../Timer/utils/preset";
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState();
   const [time, setTime] = useState(preset.tenMin);
 
   const timerTransitions = useTransition(time === 0, {
@@ -26,7 +27,9 @@ function App() {
   });
 
   return (
-    <TimerContext.Provider value={{ time, setTime, open, setOpen }}>
+    <TimerContext.Provider
+      value={{ time, setTime, open, setOpen, closeTimeout, setCloseTimeout }}
+    >
       <main className={styles.container}>
         <Toggle isInverted={!time} />
         <Timer />
