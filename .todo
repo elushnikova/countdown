@@ -1,0 +1,21 @@
+Countdown:
+  + Basic countdown in seconds
+  + Show minutes and seconds
+  + Style
+  + fix: Show Settings smoothly
+  + fix: Remove leading zero when < 10 sec
+  + fix: Autoclose Settings
+  + feat: Change bg when time is over
+  + fix: Close Settings on click outside
+  + refactor: Store autoclose timeout in App
+  + fix: Break time over text on xs screens
+  + fix: Hide timer behind settings
+  + fix: Don't autoclose settings, if there was interaction
+  - refactor: Pass isInverted via context
+  - fix: Add leave animation for TimeOver
+  - fix: Switch digits smoothly
+  - Add supporting font for buttons?
+  - Advanced animations (final countdown)
+  - Credits
+  - Pause/resume
+  - Time input
