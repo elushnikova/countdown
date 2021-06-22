@@ -8,7 +8,7 @@ import {
   moduloByMinute,
 } from "./utils/lib";
 
-function Countdown() {
+function Timer() {
   const [debug] = useState(false);
   const [ms, setMs] = useState(preset.tenMin);
 
@@ -26,7 +26,7 @@ function Countdown() {
 
   return (
     <section>
-      <h2>Countdown</h2>
+      <h2>Timer</h2>
 
       <p>
         {ms ? (
@@ -53,4 +53,4 @@ function Countdown() {
   );
 }
 
-export default Countdown;
+export default Timer;
