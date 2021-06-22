@@ -20,4 +20,15 @@ function padNumber(n) {
   return n.toString().padStart(2, "0");
 }
 
-export { subtractSecond, divideByMinute, moduloByMinute, truncate, padNumber };
+function lessThanMinute(ms) {
+  return ms < minute;
+}
+
+export {
+  subtractSecond,
+  divideByMinute,
+  moduloByMinute,
+  truncate,
+  padNumber,
+  lessThanMinute,
+};

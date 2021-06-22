@@ -1,0 +1,16 @@
+.block {
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  padding: 2rem;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
