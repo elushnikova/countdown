@@ -1,14 +1,33 @@
+import { useContext, useEffect, useState } from "react";
+import TimerContext from "../../contexts/TimerContext";
+import { second } from "../Timer/utils/preset";
 import styles from "./Toggle.module.scss";
 
 /**
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
-function Toggle({ open, setOpen }) {
+function Toggle() {
+  const { open, setOpen } = useContext(TimerContext);
+  const [id, setId] = useState();
+
+  function handleChange() {
+    const timeoutId = setTimeout(() => {
+      setOpen(false);
+    }, 5 * second);
+
+    setId(timeoutId);
+    setOpen(!open);
+  }
+
+  useEffect(() => {
+    return () => clearTimeout(id);
+  }, [id]);
+
   return (
     <>
       <label className={styles.toggle}>
-        <input type="checkbox" checked={open} onChange={() => setOpen(!open)} />
+        <input type="checkbox" checked={open} onChange={handleChange} />
         <div>
           <div>
             <span></span>

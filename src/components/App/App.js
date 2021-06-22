@@ -20,9 +20,9 @@ function App() {
   });
 
   return (
-    <TimerContext.Provider value={{ time, setTime }}>
+    <TimerContext.Provider value={{ time, setTime, open, setOpen }}>
       <main className={styles.container}>
-        <Toggle open={open} setOpen={setOpen} />
+        <Toggle />
         <Timer />
         {transitions((props, item) => item && <Settings style={props} />)}
       </main>
