@@ -1,12 +1,32 @@
 import { useState } from "react";
 import { useTransition } from "react-spring";
-import Toggle from "../Toggle/Toggle";
-import Settings from "../Settings/Settings";
-import Timer from "../Timer/Timer";
-import FinalSlide from "../FinalSlide";
-import classes from "./App.module.scss";
-import TimerContext from "../../contexts/TimerContext";
-import unit from "../../utils/unit";
+import Toggle from "./Toggle/Toggle";
+import Settings from "./Settings/Settings";
+import Timer from "./Timer/Timer";
+import FinalSlide from "./FinalSlide";
+import TimerContext from "../contexts/TimerContext";
+import unit from "../utils/unit";
+import styled from "styled-components";
+import color from "../utils/color";
+
+const Container = styled.main`
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 1rem;
+
+  color: ${color.accent};
+  background-color: ${color.base};
+
+  font-family: "Russo One", sans-serif;
+`;
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -38,7 +58,7 @@ function App() {
         isInverted: !time,
       }}
     >
-      <main className={classes.container}>
+      <Container>
         <Toggle />
         <Timer />
         {timerTransitions(
@@ -47,7 +67,7 @@ function App() {
         {settingsTransitions(
           (props, item) => item && <Settings style={props} />
         )}
-      </main>
+      </Container>
     </TimerContext.Provider>
   );
 }
