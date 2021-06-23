@@ -6,12 +6,12 @@ import Timer from "../Timer/Timer";
 import TimeOver from "../TimeOver/TimeOver";
 import classes from "./App.module.scss";
 import TimerContext from "../../contexts/TimerContext";
-import preset from "../../utils/preset";
+import unit from "../../utils/unit";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [closeTimeout, setCloseTimeout] = useState();
-  const [time, setTime] = useState(preset.tenMin);
+  const [time, setTime] = useState(10 * unit.minute);
 
   const timerTransitions = useTransition(time === 0, {
     from: { top: -9999 },

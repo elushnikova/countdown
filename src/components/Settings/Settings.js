@@ -1,12 +1,10 @@
 import { useContext } from "react";
 import { animated } from "react-spring";
 import TimerContext from "../../contexts/TimerContext";
-import Button from "../Button";
 import unit from "../../utils/unit";
-import preset from "../../utils/preset";
 import classes from "./Settings.module.scss";
 import Overlay from "../Overlay";
-import BaseList from "../BaseList";
+import PresetList from "../PresetList";
 
 function Settings({ style, isInverted }) {
   const { setOpen, closeTimeout, setCloseTimeout } = useContext(TimerContext);
@@ -29,38 +27,7 @@ function Settings({ style, isInverted }) {
         style={style}
         onClick={handleSettingsClick}
       >
-        <BaseList>
-          <li>
-            <Button isInverted={isInverted} time={preset.fiveSec}>
-              5 сек
-            </Button>
-          </li>
-          <li>
-            <Button isInverted={isInverted} time={preset.tenSec}>
-              10 сек
-            </Button>
-          </li>
-          <li>
-            <Button isInverted={isInverted} time={preset.oneMin}>
-              1 мин
-            </Button>
-          </li>
-          <li>
-            <Button isInverted={isInverted} time={preset.fiveMin}>
-              5 мин
-            </Button>
-          </li>
-          <li>
-            <Button isInverted={isInverted} time={preset.tenMin}>
-              10 мин
-            </Button>
-          </li>
-          <li>
-            <Button isInverted={isInverted} time={preset.fifteenMin}>
-              15 мин
-            </Button>
-          </li>
-        </BaseList>
+        <PresetList isInverted={isInverted} />
       </animated.div>
     </Overlay>
   );
