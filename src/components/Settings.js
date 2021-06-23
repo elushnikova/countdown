@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { animated } from "react-spring";
-import TimerContext from "../../contexts/TimerContext";
-import unit from "../../utils/unit";
-import classes from "./Settings.module.scss";
-import Overlay from "../Overlay";
-import PresetList from "../PresetList";
+import TimerContext from "../contexts/TimerContext";
+import unit from "../utils/unit";
+import Overlay from "./Overlay";
+import PresetList from "./PresetList";
+import Sidebar from "./Sidebar";
+
+const AnimatedSidebar = animated(Sidebar);
 
 function Settings({ style }) {
   const { setOpen, closeTimeout, setCloseTimeout, isInverted } =
@@ -23,13 +25,13 @@ function Settings({ style }) {
 
   return (
     <Overlay onClick={() => setOpen(false)}>
-      <animated.div
-        className={`${classes.block} ${isInverted && classes.inverted}`}
+      <AnimatedSidebar
+        isInverted={isInverted}
         style={style}
         onClick={handleSettingsClick}
       >
         <PresetList />
-      </animated.div>
+      </AnimatedSidebar>
     </Overlay>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTransition } from "react-spring";
 import Toggle from "./Toggle/Toggle";
-import Settings from "./Settings/Settings";
+import Settings from "./Settings";
 import Timer from "./Timer/Timer";
 import FinalSlide from "./FinalSlide";
 import TimerContext from "../contexts/TimerContext";
