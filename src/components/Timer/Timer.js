@@ -8,7 +8,7 @@ import {
   moduloByMinute,
   lessThanMinute,
   lessThanTenSec,
-} from "./utils/lib";
+} from "../../utils/timerLib";
 import classes from "./Timer.module.scss";
 import TimerContext from "../../contexts/TimerContext";
 

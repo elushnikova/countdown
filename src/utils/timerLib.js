@@ -1,4 +1,4 @@
-import unit from "../../../utils/unit";
+import unit from "./unit";
 
 function subtractSecond(prev) {
   return prev - unit.second;
