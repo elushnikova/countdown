@@ -2,14 +2,14 @@ import BaseList from "./BaseList";
 import Button from "./Button";
 import presets from "../utils/presets";
 
-function TimeButtonList({ isInverted }) {
+function PresetList() {
   return (
     <BaseList>
       {presets
         .filter((p) => p.isActive)
         .map((p) => (
           <li>
-            <Button key={p.slug} isInverted={isInverted} time={p.time}>
+            <Button key={p.slug} time={p.time}>
               {p.title}
             </Button>
           </li>
@@ -18,4 +18,4 @@ function TimeButtonList({ isInverted }) {
   );
 }
 
-export default TimeButtonList;
+export default PresetList;

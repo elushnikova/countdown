@@ -6,8 +6,9 @@ import classes from "./Settings.module.scss";
 import Overlay from "../Overlay";
 import PresetList from "../PresetList";
 
-function Settings({ style, isInverted }) {
-  const { setOpen, closeTimeout, setCloseTimeout } = useContext(TimerContext);
+function Settings({ style }) {
+  const { setOpen, closeTimeout, setCloseTimeout, isInverted } =
+    useContext(TimerContext);
 
   function handleSettingsClick(e) {
     e.stopPropagation();
@@ -27,7 +28,7 @@ function Settings({ style, isInverted }) {
         style={style}
         onClick={handleSettingsClick}
       >
-        <PresetList isInverted={isInverted} />
+        <PresetList />
       </animated.div>
     </Overlay>
   );

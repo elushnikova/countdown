@@ -28,14 +28,22 @@ function App() {
 
   return (
     <TimerContext.Provider
-      value={{ time, setTime, open, setOpen, closeTimeout, setCloseTimeout }}
+      value={{
+        time,
+        setTime,
+        open,
+        setOpen,
+        closeTimeout,
+        setCloseTimeout,
+        isInverted: !time,
+      }}
     >
       <main className={classes.container}>
-        <Toggle isInverted={!time} />
+        <Toggle />
         <Timer />
         {timerTransitions((props, item) => item && <TimeOver style={props} />)}
         {settingsTransitions(
-          (props, item) => item && <Settings style={props} isInverted={!time} />
+          (props, item) => item && <Settings style={props} />
         )}
       </main>
     </TimerContext.Provider>

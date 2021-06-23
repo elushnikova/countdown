@@ -7,8 +7,8 @@ import classes from "./Toggle.module.scss";
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
-function Toggle({ isInverted }) {
-  const { open, setOpen, closeTimeout, setCloseTimeout } =
+function Toggle() {
+  const { open, setOpen, closeTimeout, setCloseTimeout, isInverted } =
     useContext(TimerContext);
 
   function handleChange() {
