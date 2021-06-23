@@ -28,7 +28,7 @@ const InvertedBlock = styled.div`
 
 const AnimatedBlock = animated(InvertedBlock);
 
-function TimeOver({ style }) {
+function FinalSlide({ style }) {
   return (
     <AnimatedBlock style={style}>
       Перерыв
@@ -38,4 +38,4 @@ function TimeOver({ style }) {
   );
 }
 
-export default TimeOver;
+export default FinalSlide;

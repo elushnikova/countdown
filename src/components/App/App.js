@@ -3,7 +3,7 @@ import { useTransition } from "react-spring";
 import Toggle from "../Toggle/Toggle";
 import Settings from "../Settings/Settings";
 import Timer from "../Timer/Timer";
-import TimeOver from "../TimeOver";
+import FinalSlide from "../FinalSlide";
 import classes from "./App.module.scss";
 import TimerContext from "../../contexts/TimerContext";
 import unit from "../../utils/unit";
@@ -41,7 +41,9 @@ function App() {
       <main className={classes.container}>
         <Toggle />
         <Timer />
-        {timerTransitions((props, item) => item && <TimeOver style={props} />)}
+        {timerTransitions(
+          (props, item) => item && <FinalSlide style={props} />
+        )}
         {settingsTransitions(
           (props, item) => item && <Settings style={props} />
         )}
