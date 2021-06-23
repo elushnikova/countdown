@@ -9,7 +9,7 @@ import {
   lessThanMinute,
   lessThanTenSec,
 } from "./utils/lib";
-import styles from "./Timer.module.scss";
+import classes from "./Timer.module.scss";
 import TimerContext from "../../contexts/TimerContext";
 
 function Timer() {
@@ -31,18 +31,18 @@ function Timer() {
     <>
       {Boolean(time) && (
         <div
-          className={`${styles.block} ${lessThanMinute(time) && styles.single}`}
+          className={`${classes.block} ${lessThanMinute(time) && classes.single}`}
         >
           {!lessThanMinute(time) && (
             <>
-              <span className={styles.minutes}>
+              <span className={classes.minutes}>
                 {padNumber(truncate(divideByMinute(time)))}
               </span>
-              <span className={styles.separator}>:</span>
+              <span className={classes.separator}>:</span>
             </>
           )}
 
-          <span className={styles.seconds}>
+          <span className={classes.seconds}>
             {lessThanTenSec(time)
               ? moduloByMinute(time) / second
               : padNumber(moduloByMinute(time) / second)}

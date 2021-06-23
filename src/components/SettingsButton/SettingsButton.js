@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import TimerContext from "../../contexts/TimerContext";
-import styles from "./SettingsButton.module.scss";
+import classes from "./SettingsButton.module.scss";
 
 function SettingsButton({ time, children, isInverted }) {
   const { setTime } = useContext(TimerContext);
@@ -8,7 +8,7 @@ function SettingsButton({ time, children, isInverted }) {
   return (
     <button
       onClick={() => setTime(time)}
-      className={`${styles.button} ${isInverted && styles.inverted}`}
+      className={`${classes.button} ${isInverted && classes.inverted}`}
     >
       {children}
     </button>

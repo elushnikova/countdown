@@ -4,7 +4,7 @@ import Toggle from "../Toggle/Toggle";
 import Settings from "../Settings/Settings";
 import Timer from "../Timer/Timer";
 import TimeOver from "../TimeOver/TimeOver";
-import styles from "./App.module.scss";
+import classes from "./App.module.scss";
 import TimerContext from "../../contexts/TimerContext";
 import preset from "../Timer/utils/preset";
 
@@ -30,7 +30,7 @@ function App() {
     <TimerContext.Provider
       value={{ time, setTime, open, setOpen, closeTimeout, setCloseTimeout }}
     >
-      <main className={styles.container}>
+      <main className={classes.container}>
         <Toggle isInverted={!time} />
         <Timer />
         {timerTransitions((props, item) => item && <TimeOver style={props} />)}

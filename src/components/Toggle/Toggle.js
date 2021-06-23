@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import TimerContext from "../../contexts/TimerContext";
 import { second } from "../Timer/utils/preset";
-import styles from "./Toggle.module.scss";
+import classes from "./Toggle.module.scss";
 
 /**
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
@@ -26,7 +26,7 @@ function Toggle({ isInverted }) {
 
   return (
     <>
-      <label className={`${styles.toggle} ${isInverted && styles.inverted}`}>
+      <label className={`${classes.toggle} ${isInverted && classes.inverted}`}>
         <input type="checkbox" checked={open} onChange={handleChange} />
         <div>
           <div>
