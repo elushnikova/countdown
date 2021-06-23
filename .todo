@@ -11,11 +11,24 @@ Countdown:
   + fix: Break time over text on xs screens
   + fix: Hide timer behind settings
   + fix: Don't autoclose settings, if there was interaction
-  - refactor: Pass isInverted via context
+  + refactor: Pass isInverted via context
+  - refactor: Move styles to styled components
+  - chore: Remove unused node-sass
+
+  - refactor: Centralize colors
+  
+  feat: Add Elbrus theme:
+    - add colors
+    - store in localStorage
+    - pass via context
+
+  - fix: Don't autoclose settings, if there was navigation via keyboard
   - fix: Add leave animation for TimeOver
   - fix: Switch digits smoothly
   - Add supporting font for buttons?
   - Advanced animations (final countdown)
   - Credits
+    Favicon
+    https://www.flaticon.com/free-icon/coffee-time_4388237?related_id=4388207&origin=search
   - Pause/resume
   - Time input
