@@ -6,7 +6,7 @@ import Timer from "../Timer/Timer";
 import TimeOver from "../TimeOver/TimeOver";
 import classes from "./App.module.scss";
 import TimerContext from "../../contexts/TimerContext";
-import preset from "../Timer/utils/preset";
+import preset from "../../utils/preset";
 
 function App() {
   const [open, setOpen] = useState(false);

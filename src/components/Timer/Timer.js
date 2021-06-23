@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { second } from "./utils/preset";
+import unit from "../../utils/unit";
 import {
   subtractSecond,
   padNumber,
@@ -20,7 +20,7 @@ function Timer() {
 
     const id = setTimeout(() => {
       setTime(subtractSecond);
-    }, second);
+    }, unit.second);
 
     return () => {
       clearTimeout(id);
@@ -31,7 +31,9 @@ function Timer() {
     <>
       {Boolean(time) && (
         <div
-          className={`${classes.block} ${lessThanMinute(time) && classes.single}`}
+          className={`${classes.block} ${
+            lessThanMinute(time) && classes.single
+          }`}
         >
           {!lessThanMinute(time) && (
             <>
@@ -44,8 +46,8 @@ function Timer() {
 
           <span className={classes.seconds}>
             {lessThanTenSec(time)
-              ? moduloByMinute(time) / second
-              : padNumber(moduloByMinute(time) / second)}
+              ? moduloByMinute(time) / unit.second
+              : padNumber(moduloByMinute(time) / unit.second)}
           </span>
         </div>
       )}

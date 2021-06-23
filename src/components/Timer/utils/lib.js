@@ -1,15 +1,15 @@
-import { second, minute } from "./preset";
+import unit from "../../../utils/unit";
 
 function subtractSecond(prev) {
-  return prev - second;
+  return prev - unit.second;
 }
 
 function divideByMinute(ms) {
-  return ms / minute;
+  return ms / unit.minute;
 }
 
 function moduloByMinute(ms) {
-  return ms % minute;
+  return ms % unit.minute;
 }
 
 function truncate(n) {
@@ -21,11 +21,11 @@ function padNumber(n) {
 }
 
 function lessThanMinute(ms) {
-  return ms < minute;
+  return ms < unit.minute;
 }
 
 function lessThanTenSec(ms) {
-  return ms < 10 * second;
+  return ms < 10 * unit.second;
 }
 
 export {

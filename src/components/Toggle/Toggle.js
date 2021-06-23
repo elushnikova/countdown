@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import TimerContext from "../../contexts/TimerContext";
-import { second } from "../Timer/utils/preset";
+import unit from "../../utils/unit";
 import classes from "./Toggle.module.scss";
 
 /**
@@ -14,7 +14,7 @@ function Toggle({ isInverted }) {
   function handleChange() {
     const timeoutId = setTimeout(() => {
       setOpen(false);
-    }, 5 * second);
+    }, 5 * unit.second);
 
     setCloseTimeout(timeoutId);
     setOpen(!open);

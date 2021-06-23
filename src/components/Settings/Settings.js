@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { animated } from "react-spring";
 import TimerContext from "../../contexts/TimerContext";
 import Button from "../Button";
-import preset, { second } from "../Timer/utils/preset";
+import unit from "../../utils/unit";
+import preset from "../../utils/preset";
 import classes from "./Settings.module.scss";
 import Overlay from "../Overlay";
 import BaseList from "../BaseList";
@@ -16,7 +17,7 @@ function Settings({ style, isInverted }) {
 
     const timeoutId = setTimeout(() => {
       setOpen(false);
-    }, 5 * second);
+    }, 5 * unit.second);
 
     setCloseTimeout(timeoutId);
   }
