@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { animated } from "react-spring";
 import TimerContext from "../../contexts/TimerContext";
-import SettingsButton from "../SettingsButton/SettingsButton";
+import Button from "../Button";
 import preset, { second } from "../Timer/utils/preset";
 import classes from "./Settings.module.scss";
 
@@ -28,34 +28,34 @@ function Settings({ style, isInverted }) {
       >
         <ul className={classes.list}>
           <li>
-            <SettingsButton isInverted={isInverted} time={preset.fiveSec}>
+            <Button isInverted={isInverted} time={preset.fiveSec}>
               5 сек
-            </SettingsButton>
+            </Button>
           </li>
           <li>
-            <SettingsButton isInverted={isInverted} time={preset.tenSec}>
+            <Button isInverted={isInverted} time={preset.tenSec}>
               10 сек
-            </SettingsButton>
+            </Button>
           </li>
           <li>
-            <SettingsButton isInverted={isInverted} time={preset.oneMin}>
+            <Button isInverted={isInverted} time={preset.oneMin}>
               1 мин
-            </SettingsButton>
+            </Button>
           </li>
           <li>
-            <SettingsButton isInverted={isInverted} time={preset.fiveMin}>
+            <Button isInverted={isInverted} time={preset.fiveMin}>
               5 мин
-            </SettingsButton>
+            </Button>
           </li>
           <li>
-            <SettingsButton isInverted={isInverted} time={preset.tenMin}>
+            <Button isInverted={isInverted} time={preset.tenMin}>
               10 мин
-            </SettingsButton>
+            </Button>
           </li>
           <li>
-            <SettingsButton isInverted={isInverted} time={preset.fifteenMin}>
+            <Button isInverted={isInverted} time={preset.fifteenMin}>
               15 мин
-            </SettingsButton>
+            </Button>
           </li>
         </ul>
       </animated.div>
