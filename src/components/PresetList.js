@@ -8,10 +8,8 @@ function PresetList() {
       {presets
         .filter((p) => p.isActive)
         .map((p) => (
-          <li>
-            <Button key={p.slug} time={p.time}>
-              {p.title}
-            </Button>
+          <li key={p.slug}>
+            <Button time={p.time}>{p.title}</Button>
           </li>
         ))}
     </BaseList>
