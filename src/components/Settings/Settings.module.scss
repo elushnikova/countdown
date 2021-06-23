@@ -2,12 +2,6 @@ $main: #001d3d;
 $accent: #ffd166;
 $shadowWidth: 0.5rem;
 
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-}
-
 .block {
   position: absolute;
   background-color: $main;
@@ -27,9 +21,4 @@ $shadowWidth: 0.5rem;
 .block.inverted {
   background-color: $accent;
   box-shadow: $main 0px 20px 30px -10px;
-}
-
-.list {
-  list-style-type: none;
-  padding: 0;
 }

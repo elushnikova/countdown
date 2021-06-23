@@ -4,6 +4,8 @@ import TimerContext from "../../contexts/TimerContext";
 import Button from "../Button";
 import preset, { second } from "../Timer/utils/preset";
 import classes from "./Settings.module.scss";
+import Overlay from "../Overlay";
+import BaseList from "../BaseList";
 
 function Settings({ style, isInverted }) {
   const { setOpen, closeTimeout, setCloseTimeout } = useContext(TimerContext);
@@ -20,13 +22,13 @@ function Settings({ style, isInverted }) {
   }
 
   return (
-    <div className={classes.overlay} onClick={() => setOpen(false)}>
+    <Overlay onClick={() => setOpen(false)}>
       <animated.div
         className={`${classes.block} ${isInverted && classes.inverted}`}
         style={style}
         onClick={handleSettingsClick}
       >
-        <ul className={classes.list}>
+        <BaseList>
           <li>
             <Button isInverted={isInverted} time={preset.fiveSec}>
               5 сек
@@ -57,9 +59,9 @@ function Settings({ style, isInverted }) {
               15 мин
             </Button>
           </li>
-        </ul>
+        </BaseList>
       </animated.div>
-    </div>
+    </Overlay>
   );
 }
 
