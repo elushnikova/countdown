@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import colors from "../utils/colors";
+import color from "../utils/color";
 
 const BaseButton = styled.button`
   display: flex;
@@ -8,7 +8,7 @@ const BaseButton = styled.button`
   padding: 1rem 0.5rem;
   border: 0;
 
-  color: ${(props) => (props.isInverted ? colors.base : colors.accent)};
+  color: ${(props) => (props.isInverted ? color.base : color.accent)};
   background: transparent;
 
   font-family: inherit;
@@ -26,7 +26,7 @@ const BaseButton = styled.button`
     margin-right: 1rem;
 
     background-color: ${(props) =>
-      props.isInverted ? colors.base : colors.accent};
+      props.isInverted ? color.base : color.accent};
 
     border-radius: 50%;
     opacity: 0;
