@@ -1,22 +1,21 @@
-import { useContext } from 'react';
 import { animated } from 'react-spring';
-import TimerContext from '../../contexts/TimerContext';
+import useSettingsContext from '../../hooks/useSettingsContext';
 import SettingsButton from '../SettingsButton/SettingsButton';
 import preset, { second } from '../Timer/utils/preset';
 import classes from './Settings.module.scss';
 
 function Settings({ style, isInverted }) {
-  const { setOpen, closeTimeout, setCloseTimeout } = useContext(TimerContext);
+  const { setOpen, timeoutId, setTimeoutId } = useSettingsContext();
 
   function handleSettingsClick(e) {
     e.stopPropagation();
-    clearTimeout(closeTimeout);
+    clearTimeout(timeoutId);
 
-    const timeoutId = setTimeout(() => {
+    const id = setTimeout(() => {
       setOpen(false);
     }, 5 * second);
 
-    setCloseTimeout(timeoutId);
+    setTimeoutId(id);
   }
 
   return (

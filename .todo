@@ -22,6 +22,7 @@ Countdown:
     + style: Fix linting errors
     + feat: Accept seconds via URL query
     + fix: Limit accepted time by 45 minutes
+    + refactor: Separate contexts
     - feat: Accept minutes via form
     - chore: Upgrade to React 18?
     - chore: Bump project version

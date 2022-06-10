@@ -1,5 +1,5 @@
-import { useContext, useEffect } from 'react';
-import TimerContext from '../../contexts/TimerContext';
+import { useEffect } from 'react';
+import useSettingsContext from '../../hooks/useSettingsContext';
 import { second } from '../Timer/utils/preset';
 import styles from './Toggle.module.scss';
 
@@ -9,19 +9,22 @@ import styles from './Toggle.module.scss';
  */
 function Toggle({ isInverted }) {
   const {
-    open, setOpen, closeTimeout, setCloseTimeout,
-  } = useContext(TimerContext);
+    open,
+    setOpen,
+    timeoutId,
+    setTimeoutId,
+  } = useSettingsContext();
 
   function handleChange() {
-    const timeoutId = setTimeout(() => {
+    const id = setTimeout(() => {
       setOpen(false);
     }, 5 * second);
 
-    setCloseTimeout(timeoutId);
+    setTimeoutId(id);
     setOpen(!open);
   }
 
-  useEffect(() => () => clearTimeout(closeTimeout), [closeTimeout]);
+  useEffect(() => () => clearTimeout(timeoutId), [timeoutId]);
 
   return (
     <>

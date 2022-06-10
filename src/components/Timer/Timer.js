@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { second } from './utils/preset';
 import {
   subtractSecond,
@@ -10,10 +10,10 @@ import {
   lessThanTenSec,
 } from './utils/lib';
 import styles from './Timer.module.scss';
-import TimerContext from '../../contexts/TimerContext';
+import useTimerContext from '../../hooks/useTimerContext';
 
 function Timer() {
-  const { time, setTime } = useContext(TimerContext);
+  const { time, setTime } = useTimerContext();
 
   const acceptSeconds = () => {
     const querySeconds = new URLSearchParams(document.location.search).get('s');
