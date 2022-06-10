@@ -20,7 +20,7 @@ Countdown:
     + chore: Autobump vulnerable dependencies
     + chore: Setup ESLint Airbnb base config
     + style: Fix linting errors
-    - feat: Accept seconds via URL query
+    + feat: Accept seconds via URL query
       45 minutes maximum
     - feat: Accept minutes via form
       45 minutes maximum

@@ -15,6 +15,15 @@ import TimerContext from '../../contexts/TimerContext';
 function Timer() {
   const { time, setTime } = useContext(TimerContext);
 
+  const acceptSeconds = () => {
+    const querySeconds = new URLSearchParams(document.location.search).get('s');
+    if (!querySeconds) return;
+
+    const seconds = parseInt(querySeconds, 10);
+    window.history.replaceState(null, '', document.location.origin);
+    setTime(seconds * 1000);
+  };
+
   const startTimer = () => {
     if (!time) return undefined;
 
@@ -27,6 +36,7 @@ function Timer() {
     };
   };
 
+  useEffect(acceptSeconds, [setTime]);
   useEffect(startTimer, [time, setTime]);
 
   return (
