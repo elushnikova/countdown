@@ -17,7 +17,7 @@ Countdown:
     + chore: Autoupdate lockfile to v2
     + docs: Plan 0.2.0 changes
     + chore: Update project name
-    - chore: Autobump vulnerable dependencies
+    + chore: Autobump vulnerable dependencies
     - feat: Accept seconds via URL query
       45 minutes maximum
     - feat: Accept minutes via form
