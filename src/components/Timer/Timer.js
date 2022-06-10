@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react";
-import { second } from "./utils/preset";
+import { useContext, useEffect } from 'react';
+import { second } from './utils/preset';
 import {
   subtractSecond,
   padNumber,
@@ -8,15 +8,15 @@ import {
   moduloByMinute,
   lessThanMinute,
   lessThanTenSec,
-} from "./utils/lib";
-import styles from "./Timer.module.scss";
-import TimerContext from "../../contexts/TimerContext";
+} from './utils/lib';
+import styles from './Timer.module.scss';
+import TimerContext from '../../contexts/TimerContext';
 
 function Timer() {
   const { time, setTime } = useContext(TimerContext);
 
   useEffect(() => {
-    if (!time) return;
+    if (!time) return undefined;
 
     const id = setTimeout(() => {
       setTime(subtractSecond);

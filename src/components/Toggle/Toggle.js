@@ -1,15 +1,16 @@
-import { useContext, useEffect } from "react";
-import TimerContext from "../../contexts/TimerContext";
-import { second } from "../Timer/utils/preset";
-import styles from "./Toggle.module.scss";
+import { useContext, useEffect } from 'react';
+import TimerContext from '../../contexts/TimerContext';
+import { second } from '../Timer/utils/preset';
+import styles from './Toggle.module.scss';
 
 /**
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
 function Toggle({ isInverted }) {
-  const { open, setOpen, closeTimeout, setCloseTimeout } =
-    useContext(TimerContext);
+  const {
+    open, setOpen, closeTimeout, setCloseTimeout,
+  } = useContext(TimerContext);
 
   function handleChange() {
     const timeoutId = setTimeout(() => {
@@ -20,9 +21,7 @@ function Toggle({ isInverted }) {
     setOpen(!open);
   }
 
-  useEffect(() => {
-    return () => clearTimeout(closeTimeout);
-  }, [closeTimeout]);
+  useEffect(() => () => clearTimeout(closeTimeout), [closeTimeout]);
 
   return (
     <>
@@ -42,7 +41,7 @@ function Toggle({ isInverted }) {
         </div>
       </label>
 
-      <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
+      <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }}>
         <symbol
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 44 44"

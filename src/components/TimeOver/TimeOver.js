@@ -1,5 +1,5 @@
-import { animated } from "react-spring";
-import classes from "./TimeOver.module.scss";
+import { animated } from 'react-spring';
+import classes from './TimeOver.module.scss';
 
 function TimeOver({ style }) {
   return (

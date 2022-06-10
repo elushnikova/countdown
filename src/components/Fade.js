@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useSpring, config, animated } from "react-spring";
+import { useState } from 'react';
+import { useSpring, config, animated } from 'react-spring';
 
 function Fade() {
   const [fadeOut, setFadeOut] = useState(false);
@@ -16,7 +16,7 @@ function Fade() {
       <h2>Fade</h2>
       <animated.p style={fadeProps}>
         <span>Fade </span>
-        <span>{fadeOut ? "out" : "in"}</span>
+        <span>{fadeOut ? 'out' : 'in'}</span>
       </animated.p>
     </section>
   );

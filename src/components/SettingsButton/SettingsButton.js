@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import TimerContext from "../../contexts/TimerContext";
-import styles from "./SettingsButton.module.scss";
+import { useContext } from 'react';
+import TimerContext from '../../contexts/TimerContext';
+import styles from './SettingsButton.module.scss';
 
 function SettingsButton({ time, children, isInverted }) {
   const { setTime } = useContext(TimerContext);

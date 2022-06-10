@@ -1,4 +1,12 @@
-import { divideByMinute, lessThanMinute, lessThanTenSec, moduloByMinute, padNumber, subtractSecond, truncate } from "./lib"
+import {
+  divideByMinute,
+  lessThanMinute,
+  lessThanTenSec,
+  moduloByMinute,
+  padNumber,
+  subtractSecond,
+  truncate,
+} from './lib';
 
 describe('subtractSecond', () => {
   it('returns its input milliseconds minus 1000 ms', () => {
@@ -34,7 +42,7 @@ describe('padNumber', () => {
     expect(padNumber(9)).toBe('09');
     expect(padNumber(99)).toBe('99');
     expect(padNumber(0)).toBe('00');
-    
+
     expect(padNumber(-5)).toBe('-5');
     expect(padNumber(12.34)).toBe('12.34');
   });

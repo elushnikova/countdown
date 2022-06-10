@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { useTransition } from "react-spring";
-import Toggle from "../Toggle/Toggle";
-import Settings from "../Settings/Settings";
-import Timer from "../Timer/Timer";
-import TimeOver from "../TimeOver/TimeOver";
-import styles from "./App.module.scss";
-import TimerContext from "../../contexts/TimerContext";
-import preset from "../Timer/utils/preset";
+import { useState } from 'react';
+import { useTransition } from 'react-spring';
+import Toggle from '../Toggle/Toggle';
+import Settings from '../Settings/Settings';
+import Timer from '../Timer/Timer';
+import TimeOver from '../TimeOver/TimeOver';
+import styles from './App.module.scss';
+import TimerContext from '../../contexts/TimerContext';
+import preset from '../Timer/utils/preset';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -28,14 +28,16 @@ function App() {
 
   return (
     <TimerContext.Provider
-      value={{ time, setTime, open, setOpen, closeTimeout, setCloseTimeout }}
+      value={{
+        time, setTime, open, setOpen, closeTimeout, setCloseTimeout,
+      }}
     >
       <main className={styles.container}>
         <Toggle isInverted={!time} />
         <Timer />
         {timerTransitions((props, item) => item && <TimeOver style={props} />)}
         {settingsTransitions(
-          (props, item) => item && <Settings style={props} isInverted={!time} />
+          (props, item) => item && <Settings style={props} isInverted={!time} />,
         )}
       </main>
     </TimerContext.Provider>
