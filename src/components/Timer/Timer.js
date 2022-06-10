@@ -15,7 +15,7 @@ import TimerContext from '../../contexts/TimerContext';
 function Timer() {
   const { time, setTime } = useContext(TimerContext);
 
-  useEffect(() => {
+  const startTimer = () => {
     if (!time) return undefined;
 
     const id = setTimeout(() => {
@@ -25,7 +25,9 @@ function Timer() {
     return () => {
       clearTimeout(id);
     };
-  }, [time, setTime]);
+  };
+
+  useEffect(startTimer, [time, setTime]);
 
   return (
     <>
