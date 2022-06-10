@@ -1,21 +1,40 @@
 Countdown:
-  + Basic countdown in seconds
-  + Show minutes and seconds
-  + Style
-  + fix: Show Settings smoothly
-  + fix: Remove leading zero when < 10 sec
-  + fix: Autoclose Settings
-  + feat: Change bg when time is over
-  + fix: Close Settings on click outside
-  + refactor: Store autoclose timeout in App
-  + fix: Break time over text on xs screens
-  + fix: Hide timer behind settings
-  + fix: Don't autoclose settings, if there was interaction
-  - refactor: Pass isInverted via context
-  - fix: Add leave animation for TimeOver
-  - fix: Switch digits smoothly
-  - Add supporting font for buttons?
-  - Advanced animations (final countdown)
-  - Credits
-  - Pause/resume
-  - Time input
+  0.1.0:
+    + Basic countdown in seconds
+    + Show minutes and seconds
+    + Style
+    + fix: Show Settings smoothly
+    + fix: Remove leading zero when < 10 sec
+    + fix: Autoclose Settings
+    + feat: Change bg when time is over
+    + fix: Close Settings on click outside
+    + refactor: Store autoclose timeout in App
+    + fix: Break time over text on xs screens
+    + fix: Hide timer behind settings
+    + fix: Don't autoclose settings, if there was interaction
+
+  0.2.0:
+    + chore: Autoupdate lockfile to v2
+    + docs: Plan 0.2.0 changes
+    + chore: Update project name
+    + chore: Autobump vulnerable dependencies
+    + chore: Setup ESLint Airbnb base config
+    + style: Fix linting errors
+    + feat: Accept seconds via URL query
+    + fix: Limit accepted time by 45 minutes
+    + refactor: Separate contexts
+    + chore: Bump project version
+
+  0.3.0:
+    - feat: Accept minutes via form
+    - chore: Upgrade to React 18?
+
+  Backlog:
+    - refactor: Pass isInverted via context
+    - fix: Add leave animation for TimeOver
+    - fix: Switch digits smoothly
+    - Add supporting font for buttons?
+    - Advanced animations (final countdown)
+    - Credits
+    - Pause/resume
+

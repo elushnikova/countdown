@@ -1,9 +1,9 @@
-import { animated, config, useSpring } from "react-spring";
+import { animated, config, useSpring } from 'react-spring';
 
 function Rotate() {
   const rotateProps = useSpring({
-    from: { rotateZ: 0, backgroundColor: "turquoise" },
-    to: { rotateZ: 180, backgroundColor: "aquamarine" },
+    from: { rotateZ: 0, backgroundColor: 'turquoise' },
+    to: { rotateZ: 180, backgroundColor: 'aquamarine' },
     loop: { reverse: true },
     delay: 300,
     config: config.gentle,

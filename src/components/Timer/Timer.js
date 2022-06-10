@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react";
-import { second } from "./utils/preset";
+import { useEffect } from 'react';
+import { second } from './utils/preset';
 import {
   subtractSecond,
   padNumber,
@@ -8,15 +8,30 @@ import {
   moduloByMinute,
   lessThanMinute,
   lessThanTenSec,
-} from "./utils/lib";
-import styles from "./Timer.module.scss";
-import TimerContext from "../../contexts/TimerContext";
+} from './utils/lib';
+import styles from './Timer.module.scss';
+import useTimerContext from '../../hooks/useTimerContext';
 
 function Timer() {
-  const { time, setTime } = useContext(TimerContext);
+  const { time, setTime } = useTimerContext();
 
-  useEffect(() => {
-    if (!time) return;
+  const acceptSeconds = () => {
+    const querySeconds = new URLSearchParams(document.location.search).get('s');
+    if (!querySeconds) return;
+
+    const maxMinutes = 45;
+    let seconds = parseInt(querySeconds, 10);
+
+    if (seconds > maxMinutes * 60) {
+      seconds = maxMinutes * 60;
+    }
+
+    window.history.replaceState(null, '', document.location.origin);
+    setTime(seconds * 1000);
+  };
+
+  const startTimer = () => {
+    if (!time) return undefined;
 
     const id = setTimeout(() => {
       setTime(subtractSecond);
@@ -25,7 +40,10 @@ function Timer() {
     return () => {
       clearTimeout(id);
     };
-  }, [time, setTime]);
+  };
+
+  useEffect(acceptSeconds, [setTime]);
+  useEffect(startTimer, [time, setTime]);
 
   return (
     <>
