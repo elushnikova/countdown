@@ -19,7 +19,13 @@ function Timer() {
     const querySeconds = new URLSearchParams(document.location.search).get('s');
     if (!querySeconds) return;
 
-    const seconds = parseInt(querySeconds, 10);
+    const maxMinutes = 45;
+    let seconds = parseInt(querySeconds, 10);
+
+    if (seconds > maxMinutes * 60) {
+      seconds = maxMinutes * 60;
+    }
+
     window.history.replaceState(null, '', document.location.origin);
     setTime(seconds * 1000);
   };

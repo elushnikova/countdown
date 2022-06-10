@@ -21,9 +21,8 @@ Countdown:
     + chore: Setup ESLint Airbnb base config
     + style: Fix linting errors
     + feat: Accept seconds via URL query
-      45 minutes maximum
+    + fix: Limit accepted time by 45 minutes
     - feat: Accept minutes via form
-      45 minutes maximum
     - chore: Upgrade to React 18?
     - chore: Bump project version
     - docs: Wrap work on 0.2.0
