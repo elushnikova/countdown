@@ -18,6 +18,7 @@ Countdown:
     + docs: Plan 0.2.0 changes
     + chore: Update project name
     + chore: Autobump vulnerable dependencies
+    + chore: Setup ESLint Airbnb base config
     - feat: Accept seconds via URL query
       45 minutes maximum
     - feat: Accept minutes via form
