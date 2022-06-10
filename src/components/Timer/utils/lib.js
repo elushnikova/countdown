@@ -1,32 +1,18 @@
 import { second, minute } from "./preset";
 
-function subtractSecond(prev) {
-  return prev - second;
-}
+const subtractSecond = (ms) => ms - second;
 
-function divideByMinute(ms) {
-  return ms / minute;
-}
+const divideByMinute = (ms) => ms / minute;
 
-function moduloByMinute(ms) {
-  return ms % minute;
-}
+const moduloByMinute = (ms) => ms % minute;
 
-function truncate(n) {
-  return Math.trunc(n);
-}
+const truncate = (n) => Math.trunc(n);
 
-function padNumber(n) {
-  return n.toString().padStart(2, "0");
-}
+const padNumber = (n) => n.toString().padStart(2, "0");
 
-function lessThanMinute(ms) {
-  return ms < minute;
-}
+const lessThanMinute = (ms) => ms < minute;
 
-function lessThanTenSec(ms) {
-  return ms < 10 * second;
-}
+const lessThanTenSec = (ms) => ms < 10 * second;
 
 export {
   subtractSecond,
