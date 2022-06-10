@@ -23,10 +23,11 @@ Countdown:
     + feat: Accept seconds via URL query
     + fix: Limit accepted time by 45 minutes
     + refactor: Separate contexts
+    + chore: Bump project version
+
+  0.3.0:
     - feat: Accept minutes via form
     - chore: Upgrade to React 18?
-    - chore: Bump project version
-    - docs: Wrap work on 0.2.0
 
   Backlog:
     - refactor: Pass isInverted via context
