@@ -33,6 +33,7 @@ Countdown:
       However, its previous name (SettingsContext) led to misinterpretation —
       this context was seen as a suitable place for app configs, when it isn't.
 
+    + refactor: Use ConfigContext to provide app configs
     - refactor
 
   0.3.0:

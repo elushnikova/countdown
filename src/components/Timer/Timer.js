@@ -11,22 +11,27 @@ import {
 } from './utils/lib';
 import styles from './Timer.module.scss';
 import useTimerContext from '../../hooks/useTimerContext';
+import useConfigContext from '../../hooks/useConfigContext';
 
 function Timer() {
   const { time, setTime } = useTimerContext();
+  const { maxMinutes, queryKeySeconds, replaceHistoryEntry } = useConfigContext();
 
   const acceptSeconds = () => {
-    const querySeconds = new URLSearchParams(document.location.search).get('s');
+    const queryString = new URLSearchParams(document.location.search);
+    const querySeconds = queryString.get(queryKeySeconds);
+
     if (!querySeconds) return;
 
-    const maxMinutes = 45;
     let seconds = parseInt(querySeconds, 10);
-
     if (seconds > maxMinutes * 60) {
       seconds = maxMinutes * 60;
     }
 
-    window.history.replaceState(null, '', document.location.origin);
+    if (replaceHistoryEntry) {
+      window.history.replaceState(null, '', document.location.origin);
+    }
+
     setTime(seconds * 1000);
   };
 
@@ -42,7 +47,7 @@ function Timer() {
     };
   };
 
-  useEffect(acceptSeconds, [setTime]);
+  useEffect(acceptSeconds, [setTime, queryKeySeconds, maxMinutes, replaceHistoryEntry]);
   useEffect(startTimer, [time, setTime]);
 
   return (
