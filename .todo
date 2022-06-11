@@ -34,11 +34,13 @@ Countdown:
       this context was seen as a suitable place for app configs, when it isn't.
 
     + refactor: Use ConfigContext to provide app configs
-    - refactor
+    + refactor: Separate timer effects to custom hooks
+
+    - chore: Upgrade to React 18?
+    - fix or feat
 
   0.3.0:
     - feat: Accept minutes via form
-    - chore: Upgrade to React 18?
 
   Backlog:
     - refactor: Pass isInverted via context
