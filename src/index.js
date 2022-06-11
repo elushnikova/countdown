@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
-import { SettingsProvider } from './hooks/useSettingsContext';
+import { SidebarProvider } from './hooks/useSidebarContext';
 import { TimerProvider } from './hooks/useTimerContext';
 import './index.css';
 
 ReactDOM.render(
   <TimerProvider>
-    <SettingsProvider>
+    <SidebarProvider>
       <App />
-    </SettingsProvider>
+    </SidebarProvider>
   </TimerProvider>,
   document.getElementById('root'),
 );
