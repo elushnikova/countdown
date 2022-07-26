@@ -37,6 +37,9 @@ Countdown:
     + refactor: Separate timer effects to custom hooks
 
     + chore: Upgrade to React 18
+    + chore: Update CRA-related packages and React Spring
+
+      Generate new CRA project, copy files, adjust package.json.
 
   0.3.0:
     - feat: Accept minutes via form
