@@ -25,9 +25,21 @@ Countdown:
     + refactor: Separate contexts
     + chore: Bump project version
 
+  0.2.1:
+    + refactor: Use SidebarContext to avoid ambiguity
+
+      It is indented to work with settings sidebar in UI.
+
+      However, its previous name (SettingsContext) led to misinterpretation —
+      this context was seen as a suitable place for app configs, when it isn't.
+
+    + refactor: Use ConfigContext to provide app configs
+    + refactor: Separate timer effects to custom hooks
+
+    + chore: Upgrade to React 18
+
   0.3.0:
     - feat: Accept minutes via form
-    - chore: Upgrade to React 18?
 
   Backlog:
     - refactor: Pass isInverted via context
@@ -38,3 +50,24 @@ Countdown:
     - Credits
     - Pause/resume
 
+  Milestones:
+    + Countdown for lecture breaks — v0.1.0
+    + Customize countdown time - v0.2.0
+    + Upgrade to React 18 — v.0.2.1
+    - Customize countdown time via UI - v0.3.0
+    - Presets in local storage - v0.4.0
+      Customize message, colors, time and save as a preset
+
+      Presets?
+      Lecture interval
+      Lecture break
+      Interview exam duration
+      Code review duration
+
+    - Shareable countdowns? - v1.0.0
+      Backend. DB?
+
+    - Presets in DB?
+      Backend and DB
+
+      

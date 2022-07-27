@@ -1,11 +1,11 @@
 import { animated } from 'react-spring';
-import useSettingsContext from '../../hooks/useSettingsContext';
+import useSidebarContext from '../../hooks/useSidebarContext';
 import SettingsButton from '../SettingsButton/SettingsButton';
 import preset, { second } from '../Timer/utils/preset';
 import classes from './Settings.module.scss';
 
 function Settings({ style, isInverted }) {
-  const { setOpen, timeoutId, setTimeoutId } = useSettingsContext();
+  const { setOpen, timeoutId, setTimeoutId } = useSidebarContext();
 
   function handleSettingsClick(e) {
     e.stopPropagation();

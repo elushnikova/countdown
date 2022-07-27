@@ -1,15 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './components/App/App';
-import { SettingsProvider } from './hooks/useSettingsContext';
+import { ConfigProvider } from './hooks/useConfigContext';
+import { SidebarProvider } from './hooks/useSidebarContext';
 import { TimerProvider } from './hooks/useTimerContext';
 import './index.css';
 
-ReactDOM.render(
-  <TimerProvider>
-    <SettingsProvider>
-      <App />
-    </SettingsProvider>
-  </TimerProvider>,
-  document.getElementById('root'),
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
+  <ConfigProvider>
+    <TimerProvider>
+      <SidebarProvider>
+        <App />
+      </SidebarProvider>
+    </TimerProvider>
+  </ConfigProvider>,
 );

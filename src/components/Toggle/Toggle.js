@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useSettingsContext from '../../hooks/useSettingsContext';
+import useSidebarContext from '../../hooks/useSidebarContext';
 import { second } from '../Timer/utils/preset';
 import styles from './Toggle.module.scss';
 
@@ -13,7 +13,7 @@ function Toggle({ isInverted }) {
     setOpen,
     timeoutId,
     setTimeoutId,
-  } = useSettingsContext();
+  } = useSidebarContext();
 
   function handleChange() {
     const id = setTimeout(() => {

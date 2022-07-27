@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { second } from './utils/preset';
 import {
-  subtractSecond,
   padNumber,
   truncate,
   divideByMinute,
@@ -11,39 +9,14 @@ import {
 } from './utils/lib';
 import styles from './Timer.module.scss';
 import useTimerContext from '../../hooks/useTimerContext';
+import useGetQuerySecondsEffect from '../../hooks/useGetQuerySecondsEffect';
+import useStartTimerEffect from '../../hooks/useStartTimerEffect';
 
 function Timer() {
-  const { time, setTime } = useTimerContext();
+  const { time } = useTimerContext();
 
-  const acceptSeconds = () => {
-    const querySeconds = new URLSearchParams(document.location.search).get('s');
-    if (!querySeconds) return;
-
-    const maxMinutes = 45;
-    let seconds = parseInt(querySeconds, 10);
-
-    if (seconds > maxMinutes * 60) {
-      seconds = maxMinutes * 60;
-    }
-
-    window.history.replaceState(null, '', document.location.origin);
-    setTime(seconds * 1000);
-  };
-
-  const startTimer = () => {
-    if (!time) return undefined;
-
-    const id = setTimeout(() => {
-      setTime(subtractSecond);
-    }, second);
-
-    return () => {
-      clearTimeout(id);
-    };
-  };
-
-  useEffect(acceptSeconds, [setTime]);
-  useEffect(startTimer, [time, setTime]);
+  useGetQuerySecondsEffect();
+  useStartTimerEffect();
 
   return (
     <>

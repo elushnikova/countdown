@@ -5,11 +5,11 @@ import Timer from '../Timer/Timer';
 import TimeOver from '../TimeOver/TimeOver';
 import styles from './App.module.scss';
 import useTimerContext from '../../hooks/useTimerContext';
-import useSettingsContext from '../../hooks/useSettingsContext';
+import useSidebarContext from '../../hooks/useSidebarContext';
 
 function App() {
   const { time } = useTimerContext();
-  const { open } = useSettingsContext();
+  const { open } = useSidebarContext();
 
   const timerTransitions = useTransition(time === 0, {
     from: { top: -9999 },
