@@ -47,7 +47,7 @@ Countdown:
 
       If you need JSX syntax for context providers only, feel free to use .js extension for such files.
     
-    - chore: Remove unused Fade.jsx and Rotate.jsx
+    + chore: Remove unused Fade.jsx and Rotate.jsx
     - refactor: Stop using nested SCSS nesting
     - refactor: Use CSS custom properties, not SCSS variables
     - style: Use CSS files instead of SCSS
