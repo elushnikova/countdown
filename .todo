@@ -43,7 +43,11 @@ Countdown:
 
   0.2.2:
     + docs: Add scope for 0.2.2
-    - style: Mark JSX files with JSX extension
+    + style: Use .jsx for files with heavy JSX usage
+
+      If you need JSX syntax for context providers only, feel free to use .js extension for such files.
+    
+    - chore: Remove unused Fade.jsx and Rotate.jsx
     - refactor: Stop using nested SCSS nesting
     - refactor: Use CSS custom properties, not SCSS variables
     - style: Use CSS files instead of SCSS

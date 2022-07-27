@@ -1,6 +1,6 @@
 import { animated } from 'react-spring';
 import useSidebarContext from '../../hooks/useSidebarContext';
-import SettingsButton from '../SettingsButton/SettingsButton';
+import SettingsButton from '../SettingsButton/SettingsButton.jsx';
 import preset, { second } from '../Timer/utils/preset';
 import classes from './Settings.module.scss';
 

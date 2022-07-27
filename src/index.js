@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './components/App/App';
+import App from './components/App/App.jsx';
 import { ConfigProvider } from './hooks/useConfigContext';
 import { SidebarProvider } from './hooks/useSidebarContext';
 import { TimerProvider } from './hooks/useTimerContext';
