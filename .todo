@@ -60,7 +60,7 @@ Countdown:
       which was renamed to Sass. Source: https://sass-lang.com/blog/libsass-is-deprecated
     
     + style: Mark CSS pseudo-elements with double colons ::
-    - chore: Remove commented out CSS
+    + chore: Remove commented out CSS
 
     - refactor: Use CSS custom properties, not SCSS variables
     - refactor: Stop using SCSS nesting
