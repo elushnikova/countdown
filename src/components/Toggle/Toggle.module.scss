@@ -40,8 +40,8 @@ $gap: 30px;
           &:first-child {
             top: 0;
 
-            &:before,
-            &:after {
+            &::before,
+            &::after {
               top: 0;
             }
           }
@@ -49,14 +49,14 @@ $gap: 30px;
           &:last-child {
             bottom: 0;
 
-            &:before,
-            &:after {
+            &::before,
+            &::after {
               bottom: 0;
             }
           }
 
-          &:before,
-          &:after {
+          &::before,
+          &::after {
             content: "";
             display: block;
             width: 47%;
@@ -69,13 +69,13 @@ $gap: 30px;
               background 0.4s ease;
           }
 
-          &:before {
+          &::before {
             left: 0;
             transform-origin: 0 50%;
             transform: translate(1px, 0) scaleX(1.1);
           }
 
-          &:after {
+          &::after {
             right: 0;
             transform-origin: 100% 50%;
             transform: translate(-1px, 0) scaleX(1.1);
@@ -114,27 +114,27 @@ $gap: 30px;
         transform: rotate(90deg);
 
         span {
-          &:before,
-          &:after {
+          &::before,
+          &::after {
             background: $accentActive;
           }
 
           &:first-child {
-            &:before {
+            &::before {
               transform: rotate(45deg) translate(2.2px, -3px) scaleX(1.05);
             }
 
-            &:after {
+            &::after {
               transform: rotate(-45deg) translate(-2.2px, -3px) scaleX(1.05);
             }
           }
 
           &:last-child {
-            &:before {
+            &::before {
               transform: rotate(-45deg) translate(2.2px, 3px) scaleX(1.05);
             }
 
-            &:after {
+            &::after {
               transform: rotate(45deg) translate(-2.2px, 3px) scaleX(1.05);
             }
           }
@@ -160,8 +160,8 @@ $gap: 30px;
     & + div {
       div {
         span {
-          &:before,
-          &:after {
+          &::before,
+          &::after {
             background: $main;
           }
         }
@@ -175,8 +175,8 @@ $gap: 30px;
     &:checked + div {
       div {
         span {
-          &:before,
-          &:after {
+          &::before,
+          &::after {
             background: $mainActive;
           }
         }

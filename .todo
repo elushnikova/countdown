@@ -1,5 +1,5 @@
 Countdown:
-  0.1.0:
+  0.1.0. Basic countdown:
     + Basic countdown in seconds
     + Show minutes and seconds
     + Style
@@ -13,7 +13,7 @@ Countdown:
     + fix: Hide timer behind settings
     + fix: Don't autoclose settings, if there was interaction
 
-  0.2.0:
+  0.2.0. Accept seconds via URL query:
     + chore: Autoupdate lockfile to v2
     + docs: Plan 0.2.0 changes
     + chore: Update project name
@@ -25,7 +25,10 @@ Countdown:
     + refactor: Separate contexts
     + chore: Bump project version
 
-  0.2.1:
+  0.2.1. Upgrade to React 18:
+    Separate config and timer contexts
+    Move query and timer effects to custom hooks
+    Upgrade to React 18
     + refactor: Use SidebarContext to avoid ambiguity
 
       It is indented to work with settings sidebar in UI.
@@ -37,6 +40,34 @@ Countdown:
     + refactor: Separate timer effects to custom hooks
 
     + chore: Upgrade to React 18
+    + chore: Update CRA-related packages and React Spring
+
+      Generate new CRA project, copy files, adjust package.json.
+
+  0.2.2. Sort out project dependencies:
+    + docs: Add scope for 0.2.2
+    + style: Use .jsx for files with heavy JSX usage
+
+      If you need JSX syntax for context providers only, feel free to use .js extension for such files.
+    
+    + chore: Remove unused Fade.jsx and Rotate.jsx
+    + chore: Omit build tools from NPM audit
+
+      Use `npm audit --omit=dev` or custom `npm run audit`.
+
+      https://github.com/facebook/create-react-app/issues/11174
+
+    + chore: Use Sass, not deprecated vulnerable Node Sass
+
+      Node Sass developers deprecate it and recommend moving to Dart Sass, 
+      which was renamed to Sass. Source: https://sass-lang.com/blog/libsass-is-deprecated
+    
+    + style: Mark CSS pseudo-elements with double colons ::
+    + chore: Remove commented out CSS
+
+    + chore: Move testing library packages to devDependencies
+
+    + chore: Bump project version to 0.2.2
 
   0.3.0:
     - feat: Accept minutes via form
@@ -49,6 +80,12 @@ Countdown:
     - Advanced animations (final countdown)
     - Credits
     - Pause/resume
+
+    x Switch from SCSS to CSS:
+      x refactor: Use CSS custom properties, not SCSS variables
+      x refactor: Stop using SCSS nesting
+      x style: Use CSS files instead of SCSS
+      x chore: Remove dependency from Sass
 
   Milestones:
     + Countdown for lecture breaks — v0.1.0

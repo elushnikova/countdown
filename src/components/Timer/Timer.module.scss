@@ -50,14 +50,13 @@ button.link {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  // color: $link;
   transition: color 300ms;
 
   &:focus {
     outline: none;
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     left: 0;
@@ -70,8 +69,8 @@ button.link {
     transition: width 0.3s;
   }
 
-  &:focus:after,
-  &:hover:after {
+  &:focus::after,
+  &:hover::after {
     width: 100%;
   }
 }
