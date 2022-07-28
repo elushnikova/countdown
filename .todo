@@ -59,9 +59,9 @@ Countdown:
       Node Sass developers deprecate it and recommend moving to Dart Sass, 
       which was renamed to Sass. Source: https://sass-lang.com/blog/libsass-is-deprecated
     
-    - style: Separate CSS pseudo-elements with double colon ::
+    + style: Mark CSS pseudo-elements with double colons ::
     - chore: Remove commented out CSS
-    
+
     - refactor: Use CSS custom properties, not SCSS variables
     - refactor: Stop using SCSS nesting
     - style: Use CSS files instead of SCSS
