@@ -48,10 +48,24 @@ Countdown:
       If you need JSX syntax for context providers only, feel free to use .js extension for such files.
     
     + chore: Remove unused Fade.jsx and Rotate.jsx
-    - refactor: Stop using nested SCSS nesting
+    + chore: Omit build tools from NPM audit
+
+      Use `npm audit --omit=dev` or custom `npm run audit`.
+
+      https://github.com/facebook/create-react-app/issues/11174
+
+    + chore: Use Sass, not deprecated vulnerable Node Sass
+
+      Node Sass developers deprecate it and recommend moving to Dart Sass, 
+      which was renamed to Sass. Source: https://sass-lang.com/blog/libsass-is-deprecated
+    
+    - style: Separate CSS pseudo-elements with double colon ::
+    - chore: Remove commented out CSS
+    
     - refactor: Use CSS custom properties, not SCSS variables
+    - refactor: Stop using SCSS nesting
     - style: Use CSS files instead of SCSS
-    - chore: Remove dependency from vulnerable node-sass
+    - chore: Remove dependency from Sass
     - chore: Bump project version
 
   0.3.0:
