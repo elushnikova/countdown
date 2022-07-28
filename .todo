@@ -67,7 +67,7 @@ Countdown:
 
     + chore: Move testing library packages to devDependencies
 
-    - chore: Bump project version
+    + chore: Bump project version to 0.2.2
 
   0.3.0:
     - feat: Accept minutes via form
