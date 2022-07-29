@@ -78,7 +78,10 @@ Countdown:
     + style: Allow nested ternary operators
     + fix(timerReducer): Protect from invalid action payload
     + refactor: Simplify name for useQueryInputEffect
+    + chore: Leave only 5 and 10 minute presets
+    - refactor: Move presets to config
     - fix: Sanitize user input from URL query
+    - feat: Warn user about duration limits
     - refactor: Rename setTime to setDuration
 
   0.3.0 — Customize preset durations via local storage:
