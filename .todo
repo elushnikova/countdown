@@ -76,7 +76,7 @@ Countdown:
     + fix(useTimerEffect): Stop timer if provided duration is less than 1s
     + refactor: Encapsulate logic for changing timer value
     + style: Allow nested ternary operators
-    - fix(timerReducer): Protect from invalid action payload
+    + fix(timerReducer): Protect from invalid action payload
     - fix: Sanitize user input from URL query
     - refactor: Rename setTime to setDuration
 

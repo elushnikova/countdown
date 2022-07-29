@@ -15,9 +15,16 @@ const timerAction = {
 const timerReducer = (currentDuration, action) => {
   switch (action.type) {
     case type.SET: {
-      return action.payload < second
-        ? second
-        : action.payload;
+      const duration = Number(action.payload);
+      const isInvalid = Number.isNaN(duration);
+      const lessThanMinimum = duration < preset.minimum;
+      const moreThanMaximum = duration > preset.maximum;
+
+      return isInvalid || lessThanMinimum
+        ? preset.default
+        : moreThanMaximum
+          ? preset.maximum
+          : action.payload;
     }
 
     case type.SUBTRACT: {
@@ -35,7 +42,7 @@ const timerReducer = (currentDuration, action) => {
 const TimerContext = createContext();
 
 const TimerProvider = ({ children }) => {
-  const [time, dispatch] = useReducer(timerReducer, preset.tenMin);
+  const [time, dispatch] = useReducer(timerReducer, preset.default);
 
   return (
     <TimerContext.Provider value={{ time, dispatch, action: timerAction }}>

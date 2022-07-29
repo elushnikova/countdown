@@ -8,6 +8,10 @@ const preset = {
   fiveMin: 5 * minute,
   tenMin: 10 * minute,
   fifteenMin: 15 * minute,
+
+  get default() { return this.tenMin; },
+  get minimum() { return 1 * second; },
+  get maximum() { return 45 * minute; },
 };
 
 const presets = [
