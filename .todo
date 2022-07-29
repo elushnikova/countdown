@@ -72,7 +72,9 @@ Countdown:
   0.3.0 — Customize preset durations via local storage:
     + refactor: Move presets to hardcoded array
 
-    - fix: Stop timer if provided duration is less than 1s
+    + fix(SettingsButton): Accept 1s as minimum duration
+    - fix(useStartTimerEffect): Stop timer if provided duration is less than 1s
+    - refactor: Rename setTime to setDuration
 
     - refactor: Store presets in local storage
       Title and seconds only.

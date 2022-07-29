@@ -29,7 +29,7 @@ function Settings({ style, isInverted }) {
           {
             presets.map((preset) => (
               <li key={preset.title}>
-                <SettingsButton isInverted={isInverted} time={preset.duration}>
+                <SettingsButton isInverted={isInverted} ms={preset.duration}>
                   {preset.title}
                 </SettingsButton>
               </li>
