@@ -5,7 +5,7 @@ import useTimerContext from './useTimerContext';
 
 const useQueryInputEffect = () => {
   const { dispatch, action } = useTimerContext();
-  const { maxMinutes, queryKeySeconds, replaceHistoryEntry } = useConfigContext();
+  const { queryKeySeconds, replaceHistoryEntry } = useConfigContext();
 
   const getQuerySeconds = () => {
     const queryString = new URLSearchParams(document.location.search);
@@ -15,22 +15,18 @@ const useQueryInputEffect = () => {
       return;
     }
 
-    let numberOfSeconds = parseInt(querySeconds, 10);
-    if (numberOfSeconds > maxMinutes * 60) {
-      numberOfSeconds = maxMinutes * 60;
-    }
+    const numberOfSeconds = parseInt(querySeconds, 10);
+
+    dispatch(action.setTime(numberOfSeconds * second));
 
     if (replaceHistoryEntry) {
       window.history.replaceState(null, '', document.location.origin);
     }
-
-    dispatch(action.setTime(numberOfSeconds * second));
   };
 
   useEffect(getQuerySeconds, [
     action,
     dispatch,
-    maxMinutes,
     queryKeySeconds,
     replaceHistoryEntry,
   ]);
