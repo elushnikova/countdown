@@ -7,12 +7,12 @@ const useTimerEffect = () => {
   const { time, setTime } = useTimerContext();
 
   const startTimer = () => {
-    if (!time) {
+    if (time <= 0) {
       return undefined;
     }
 
     const id = setTimeout(() => {
-      setTime(subtractSecond);
+      setTime(time < second ? 0 : subtractSecond);
     }, second);
 
     return () => {
