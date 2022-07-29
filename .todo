@@ -75,7 +75,9 @@ Countdown:
     + fix(SettingsButton): Accept 1s as minimum duration
     + refactor: Simplify name for useTimerEffect
     + fix(useTimerEffect): Stop timer if provided duration is less than 1s
-    - refactor(useTimerContext): Encapsulate setTime logic to useReducer
+    + refactor: Encapsulate logic for changing timer value
+    
+    - fix: Sanitize user input from URL query
     - refactor: Rename setTime to setDuration
 
     - refactor: Store presets in local storage

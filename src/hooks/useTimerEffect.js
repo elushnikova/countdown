@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-import { subtractSecond } from '../components/Timer/utils/lib';
 import { second } from '../components/Timer/utils/presets';
 import useTimerContext from './useTimerContext';
 
 const useTimerEffect = () => {
-  const { time, setTime } = useTimerContext();
+  const { time, dispatch, action } = useTimerContext();
 
   const startTimer = () => {
     if (time <= 0) {
@@ -12,7 +11,7 @@ const useTimerEffect = () => {
     }
 
     const id = setTimeout(() => {
-      setTime(time < second ? 0 : subtractSecond);
+      dispatch(action.subtract());
     }, second);
 
     return () => {
@@ -20,7 +19,7 @@ const useTimerEffect = () => {
     };
   };
 
-  useEffect(startTimer, [time, setTime]);
+  useEffect(startTimer, [time, dispatch, action]);
 };
 
 export default useTimerEffect;

@@ -4,7 +4,7 @@ import useConfigContext from './useConfigContext';
 import useTimerContext from './useTimerContext';
 
 const useGetQuerySecondsEffect = () => {
-  const { setTime } = useTimerContext();
+  const { dispatch, action } = useTimerContext();
   const { maxMinutes, queryKeySeconds, replaceHistoryEntry } = useConfigContext();
 
   const getQuerySeconds = () => {
@@ -24,11 +24,12 @@ const useGetQuerySecondsEffect = () => {
       window.history.replaceState(null, '', document.location.origin);
     }
 
-    setTime(numberOfSeconds * second);
+    dispatch(action.setTime(numberOfSeconds * second));
   };
 
   useEffect(getQuerySeconds, [
-    setTime,
+    action,
+    dispatch,
     maxMinutes,
     queryKeySeconds,
     replaceHistoryEntry,
