@@ -3,7 +3,7 @@ import { second } from '../components/Timer/utils/presets';
 import useConfigContext from './useConfigContext';
 import useTimerContext from './useTimerContext';
 
-const useGetQuerySecondsEffect = () => {
+const useQueryInputEffect = () => {
   const { dispatch, action } = useTimerContext();
   const { maxMinutes, queryKeySeconds, replaceHistoryEntry } = useConfigContext();
 
@@ -36,4 +36,4 @@ const useGetQuerySecondsEffect = () => {
   ]);
 };
 
-export default useGetQuerySecondsEffect;
+export default useQueryInputEffect;

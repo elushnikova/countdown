@@ -77,6 +77,7 @@ Countdown:
     + refactor: Encapsulate logic for changing timer value
     + style: Allow nested ternary operators
     + fix(timerReducer): Protect from invalid action payload
+    + refactor: Simplify name for useQueryInputEffect
     - fix: Sanitize user input from URL query
     - refactor: Rename setTime to setDuration
 

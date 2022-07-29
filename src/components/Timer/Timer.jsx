@@ -9,13 +9,13 @@ import {
 } from './utils/lib';
 import styles from './Timer.module.scss';
 import useTimerContext from '../../hooks/useTimerContext';
-import useGetQuerySecondsEffect from '../../hooks/useGetQuerySecondsEffect';
+import useQueryInputEffect from '../../hooks/useQueryInputEffect';
 import useTimerEffect from '../../hooks/useTimerEffect';
 
 function Timer() {
   const { time } = useTimerContext();
 
-  useGetQuerySecondsEffect();
+  useQueryInputEffect();
   useTimerEffect();
 
   return (
