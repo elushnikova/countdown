@@ -28,7 +28,10 @@
       "react-app",
       "react-app/jest",
       "airbnb-base"
-    ]
+    ],
+    "rules": {
+      "no-nested-ternary": "off"
+    }
   },
   "browserslist": {
     "production": [

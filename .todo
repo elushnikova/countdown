@@ -69,17 +69,18 @@ Countdown:
 
     + chore: Bump project version to 0.2.2
 
-  0.3.0 — Customize preset durations via local storage:
+  0.2.3 — Protect against invalid input via URL query:
     + refactor: Move presets to hardcoded array
-
     + fix(SettingsButton): Accept 1s as minimum duration
     + refactor: Simplify name for useTimerEffect
     + fix(useTimerEffect): Stop timer if provided duration is less than 1s
     + refactor: Encapsulate logic for changing timer value
-    
+    + style: Allow nested ternary operators
+    - fix(timerReducer): Protect from invalid action payload
     - fix: Sanitize user input from URL query
     - refactor: Rename setTime to setDuration
 
+  0.3.0 — Customize preset durations via local storage:
     - refactor: Store presets in local storage
       Title and seconds only.
 
