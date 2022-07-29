@@ -3,7 +3,7 @@ import { subtractSecond } from '../components/Timer/utils/lib';
 import { second } from '../components/Timer/utils/presets';
 import useTimerContext from './useTimerContext';
 
-const useStartTimerEffect = () => {
+const useTimerEffect = () => {
   const { time, setTime } = useTimerContext();
 
   const startTimer = () => {
@@ -23,4 +23,4 @@ const useStartTimerEffect = () => {
   useEffect(startTimer, [time, setTime]);
 };
 
-export default useStartTimerEffect;
+export default useTimerEffect;

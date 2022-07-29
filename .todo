@@ -73,7 +73,8 @@ Countdown:
     + refactor: Move presets to hardcoded array
 
     + fix(SettingsButton): Accept 1s as minimum duration
-    - fix(useStartTimerEffect): Stop timer if provided duration is less than 1s
+    + refactor: Simplify name for useTimerEffect
+    - fix(useTimerEffect): Stop timer if provided duration is less than 1s
     - refactor: Rename setTime to setDuration
 
     - refactor: Store presets in local storage
