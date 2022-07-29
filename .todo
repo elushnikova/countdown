@@ -84,6 +84,7 @@ Countdown:
       Post by Pete Hodgson
         https://martinfowler.com/articles/feature-toggles.html
   
+    + refactor: Move presets to hardcoded array
     - refactor: Store presets in local storage
       Title and seconds only.
 

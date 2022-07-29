@@ -1,5 +1,5 @@
 import { useState, useContext, createContext } from 'react';
-import preset from '../components/Timer/utils/preset';
+import { preset } from '../components/Timer/utils/presets';
 
 const TimerContext = createContext();
 

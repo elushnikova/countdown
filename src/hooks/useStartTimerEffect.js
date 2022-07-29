@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { subtractSecond } from '../components/Timer/utils/lib';
-import { second } from '../components/Timer/utils/preset';
+import { second } from '../components/Timer/utils/presets';
 import useTimerContext from './useTimerContext';
 
 const useStartTimerEffect = () => {

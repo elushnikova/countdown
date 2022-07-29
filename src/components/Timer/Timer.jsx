@@ -1,4 +1,4 @@
-import { second } from './utils/preset';
+import { second } from './utils/presets';
 import {
   padNumber,
   truncate,

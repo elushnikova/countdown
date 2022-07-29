@@ -1,4 +1,4 @@
-import { second, minute } from './preset';
+import { second, minute } from './presets';
 
 const subtractSecond = (ms) => ms - second;
 

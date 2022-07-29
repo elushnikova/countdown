@@ -1,7 +1,7 @@
 import { animated } from 'react-spring';
 import useSidebarContext from '../../hooks/useSidebarContext';
 import SettingsButton from '../SettingsButton/SettingsButton.jsx';
-import preset, { second } from '../Timer/utils/preset';
+import presets, { second } from '../Timer/utils/presets';
 import classes from './Settings.module.scss';
 
 function Settings({ style, isInverted }) {
@@ -26,36 +26,15 @@ function Settings({ style, isInverted }) {
         onClick={handleSettingsClick}
       >
         <ul className={classes.list}>
-          <li>
-            <SettingsButton isInverted={isInverted} time={preset.fiveSec}>
-              5 сек
-            </SettingsButton>
-          </li>
-          <li>
-            <SettingsButton isInverted={isInverted} time={preset.tenSec}>
-              10 сек
-            </SettingsButton>
-          </li>
-          <li>
-            <SettingsButton isInverted={isInverted} time={preset.oneMin}>
-              1 мин
-            </SettingsButton>
-          </li>
-          <li>
-            <SettingsButton isInverted={isInverted} time={preset.fiveMin}>
-              5 мин
-            </SettingsButton>
-          </li>
-          <li>
-            <SettingsButton isInverted={isInverted} time={preset.tenMin}>
-              10 мин
-            </SettingsButton>
-          </li>
-          <li>
-            <SettingsButton isInverted={isInverted} time={preset.fifteenMin}>
-              15 мин
-            </SettingsButton>
-          </li>
+          {
+            presets.map((preset) => (
+              <li key={preset.title}>
+                <SettingsButton isInverted={isInverted} time={preset.duration}>
+                  {preset.title}
+                </SettingsButton>
+              </li>
+            ))
+          }
         </ul>
       </animated.div>
     </div>
