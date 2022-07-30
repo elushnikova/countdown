@@ -7,6 +7,9 @@ const type = {
   SUBTRACT: 'SUBTRACT_SECOND',
 };
 
+const lessThanMinimum = (duration) => duration < preset.minimum;
+const moreThanMaximum = (duration) => duration > preset.maximum;
+
 const timerAction = {
   setTime: (ms) => ({ type: type.SET, payload: ms }),
   subtract: () => ({ type: type.SUBTRACT }),
@@ -17,12 +20,10 @@ const timerReducer = (currentDuration, action) => {
     case type.SET: {
       const duration = Number(action.payload);
       const isInvalid = Number.isNaN(duration);
-      const lessThanMinimum = duration < preset.minimum;
-      const moreThanMaximum = duration > preset.maximum;
 
-      return isInvalid || lessThanMinimum
+      return isInvalid || lessThanMinimum(duration)
         ? preset.default
-        : moreThanMaximum
+        : moreThanMaximum(duration)
           ? preset.maximum
           : action.payload;
     }
@@ -45,7 +46,9 @@ const TimerProvider = ({ children }) => {
   const [time, dispatch] = useReducer(timerReducer, preset.default);
 
   return (
-    <TimerContext.Provider value={{ time, dispatch, action: timerAction }}>
+    <TimerContext.Provider value={{
+      time, dispatch, action: timerAction, lessThanMinimum, moreThanMaximum,
+    }}>
       {children}
     </TimerContext.Provider>
   );

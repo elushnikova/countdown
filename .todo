@@ -81,7 +81,7 @@ Countdown:
     + chore: Leave only 5 and 10 minute presets
     + refactor: Remove maximum duration limit from config
     + fix: Redirect to URL with proper query if limit is exceeded
-    - refactor: DRY minimum/maximum checks
+    + refactor: DRY minimum/maximum checks
     - feat: Warn user about duration limits
     - refactor: Rename setTime to setDuration
 

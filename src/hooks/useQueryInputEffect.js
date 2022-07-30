@@ -4,7 +4,9 @@ import useConfigContext from './useConfigContext';
 import useTimerContext from './useTimerContext';
 
 const useQueryInputEffect = () => {
-  const { dispatch, action } = useTimerContext();
+  const {
+    dispatch, action, lessThanMinimum, moreThanMaximum,
+  } = useTimerContext();
   const { queryKeySeconds, replaceHistoryEntry } = useConfigContext();
 
   const getQuerySeconds = () => {
@@ -24,15 +26,12 @@ const useQueryInputEffect = () => {
       window.history.replaceState(null, '', document.location.origin);
     }
 
-    const lessThanMinimum = duration < preset.minimum;
-    const moreThanMaximum = duration > preset.maximum;
-
-    if (lessThanMinimum) {
+    if (lessThanMinimum(duration)) {
       window.location.assign(`/?s=${preset.default / second}`);
       return;
     }
 
-    if (moreThanMaximum) {
+    if (moreThanMaximum(duration)) {
       window.location.assign(`/?s=${preset.maximum / second}`);
     }
   };
@@ -42,6 +41,8 @@ const useQueryInputEffect = () => {
     dispatch,
     queryKeySeconds,
     replaceHistoryEntry,
+    lessThanMinimum,
+    moreThanMaximum,
   ]);
 };
 
