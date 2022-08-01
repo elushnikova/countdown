@@ -82,6 +82,7 @@ Countdown:
     + refactor: Remove maximum duration limit from config
     + fix: Redirect to URL with proper query if limit is exceeded
     + refactor: DRY minimum/maximum checks
+    + refactor(timerReducer): Write obvious conditions
     - feat: Warn user about duration limits
     - refactor: Rename setTime to setDuration
 

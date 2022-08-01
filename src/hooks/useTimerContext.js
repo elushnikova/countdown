@@ -21,17 +21,27 @@ const timerReducer = (currentDuration, action) => {
       const duration = Number(action.payload);
       const isInvalid = Number.isNaN(duration);
 
-      return isInvalid || lessThanMinimum(duration)
-        ? preset.default
-        : moreThanMaximum(duration)
-          ? preset.maximum
-          : action.payload;
+      if (isInvalid) {
+        return preset.default;
+      }
+
+      if (lessThanMinimum(duration)) {
+        return preset.default;
+      }
+
+      if (moreThanMaximum(duration)) {
+        return preset.maximum;
+      }
+
+      return action.payload;
     }
 
     case type.SUBTRACT: {
-      return currentDuration < second
-        ? 0
-        : subtractSecond(currentDuration);
+      if (currentDuration < second) {
+        return 0;
+      }
+
+      return subtractSecond(currentDuration);
     }
 
     default: {
