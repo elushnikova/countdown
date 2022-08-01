@@ -9,7 +9,7 @@ import {
 } from './utils/lib';
 import styles from './Timer.module.scss';
 import useTimerContext from './useTimerContext';
-import useQueryInputEffect from '../../hooks/useQueryInputEffect';
+import useQueryInputEffect from '../duration/useQueryInputEffect';
 import useTimerEffect from './useTimerEffect';
 
 function Timer() {

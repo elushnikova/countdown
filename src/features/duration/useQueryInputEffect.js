@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { preset, second } from '../features/timer/utils/presets';
-import useConfigContext from './useConfigContext';
-import useTimerContext from '../features/timer/useTimerContext';
+import { preset, second } from '../timer/utils/presets';
+import useConfigContext from '../config/useConfigContext';
+import useTimerContext from '../timer/useTimerContext';
 
 const useQueryInputEffect = () => {
   const {
