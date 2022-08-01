@@ -1,11 +1,11 @@
 import { useTransition } from 'react-spring';
-import Toggle from '../Toggle/Toggle.jsx';
-import Settings from '../Settings/Settings.jsx';
+import Toggle from '../../features/settings/Toggle.jsx';
+import Settings from '../../features/settings/Settings.jsx';
 import Timer from '../../features/timer/Timer.jsx';
 import TimeOver from '../../features/timer/TimeOver.jsx';
 import styles from './App.module.scss';
 import useTimerContext from '../../features/timer/useTimerContext';
-import useSidebarContext from '../../hooks/useSidebarContext';
+import useSidebarContext from '../../features/settings/useSidebarContext';
 
 function App() {
   const { time } = useTimerContext();

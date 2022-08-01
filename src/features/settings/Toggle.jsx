@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import useSidebarContext from '../../hooks/useSidebarContext';
-import { second } from '../../features/timer/utils/presets';
+import useSidebarContext from './useSidebarContext';
+import { second } from '../timer/utils/presets';
 import styles from './Toggle.module.scss';
 
 /**

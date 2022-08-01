@@ -1,4 +1,4 @@
-import useTimerContext from '../../features/timer/useTimerContext';
+import useTimerContext from '../timer/useTimerContext';
 import styles from './SettingsButton.module.scss';
 
 function SettingsButton({ ms, children, isInverted }) {

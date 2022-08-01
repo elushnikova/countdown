@@ -1,7 +1,7 @@
 import { animated } from 'react-spring';
-import useSidebarContext from '../../hooks/useSidebarContext';
-import SettingsButton from '../SettingsButton/SettingsButton.jsx';
-import presets, { second } from '../../features/timer/utils/presets';
+import useSidebarContext from './useSidebarContext';
+import SettingsButton from './SettingsButton.jsx';
+import presets, { second } from '../timer/utils/presets';
 import classes from './Settings.module.scss';
 
 function Settings({ style, isInverted }) {
