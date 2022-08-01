@@ -87,7 +87,7 @@ Countdown:
     + refactor: Move timer stuff to features/timer
     + refactor: Move settings stuff to features/settings
     + refactor: Finalize project organization by features
-    - refactor: Separate timer stuff by files
+    + refactor: Separate timer stuff by files
     - feat: Warn user about duration limits
     - refactor: Rename setTime to setDuration
 

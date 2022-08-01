@@ -1,4 +1,4 @@
-import { second, minute } from './presets';
+import { preset, second, minute } from './presets';
 
 const subtractSecond = (ms) => ms - second;
 
@@ -14,6 +14,9 @@ const lessThanMinute = (ms) => ms < minute;
 
 const lessThanTenSec = (ms) => ms < 10 * second;
 
+const lessThanMinimum = (duration) => duration < preset.minimum;
+const moreThanMaximum = (duration) => duration > preset.maximum;
+
 export {
   subtractSecond,
   divideByMinute,
@@ -22,4 +25,6 @@ export {
   padNumber,
   lessThanMinute,
   lessThanTenSec,
+  lessThanMinimum,
+  moreThanMaximum,
 };

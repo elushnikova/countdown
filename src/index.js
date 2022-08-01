@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { ConfigProvider } from './features/config/useConfigContext';
 import { SidebarProvider } from './features/settings/useSidebarContext';
-import { TimerProvider } from './features/timer/useTimerContext';
+import TimerProvider from './features/timer/TimerProvider.jsx';
 import './index.css';
 
 const container = document.getElementById('root');
