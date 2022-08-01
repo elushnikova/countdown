@@ -84,6 +84,8 @@ Countdown:
     + refactor: DRY minimum/maximum checks
     + refactor(timerReducer): Write obvious conditions
     + style: Break down object property list by lines
+    + refactor: Move timer stuff to features/timer
+    - refactor: Organize project by features
     - feat: Warn user about duration limits
     - refactor: Rename setTime to setDuration
 

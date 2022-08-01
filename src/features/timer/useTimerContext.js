@@ -1,6 +1,6 @@
 import { useContext, createContext, useReducer } from 'react';
-import { subtractSecond } from '../components/Timer/utils/lib';
-import { preset, second } from '../components/Timer/utils/presets';
+import { subtractSecond } from './utils/lib';
+import { preset, second } from './utils/presets';
 
 const type = {
   SET: 'SET',

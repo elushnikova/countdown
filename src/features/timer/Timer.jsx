@@ -8,9 +8,9 @@ import {
   lessThanTenSec,
 } from './utils/lib';
 import styles from './Timer.module.scss';
-import useTimerContext from '../../hooks/useTimerContext';
+import useTimerContext from './useTimerContext';
 import useQueryInputEffect from '../../hooks/useQueryInputEffect';
-import useTimerEffect from '../../hooks/useTimerEffect';
+import useTimerEffect from './useTimerEffect';
 
 function Timer() {
   const { time } = useTimerContext();
