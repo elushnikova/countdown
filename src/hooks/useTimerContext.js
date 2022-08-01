@@ -57,7 +57,11 @@ const TimerProvider = ({ children }) => {
 
   return (
     <TimerContext.Provider value={{
-      time, dispatch, action: timerAction, lessThanMinimum, moreThanMaximum,
+      time,
+      dispatch,
+      action: timerAction,
+      lessThanMinimum,
+      moreThanMaximum,
     }}>
       {children}
     </TimerContext.Provider>
