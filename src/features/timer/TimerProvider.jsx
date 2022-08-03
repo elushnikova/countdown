@@ -5,12 +5,17 @@ import timerAction from './timerAction';
 import { lessThanMinimum, moreThanMaximum } from './utils/lib';
 import { preset } from './utils/presets';
 
+const initialTimer = {
+  error: null,
+  duration: preset.default,
+};
+
 const TimerProvider = ({ children }) => {
-  const [time, dispatch] = useReducer(timerReducer, preset.default);
+  const [timer, dispatch] = useReducer(timerReducer, initialTimer);
 
   return (
     <TimerContext.Provider value={{
-      time,
+      timer,
       dispatch,
       action: timerAction,
       lessThanMinimum,

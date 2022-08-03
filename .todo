@@ -88,7 +88,8 @@ Countdown:
     + refactor: Move settings stuff to features/settings
     + refactor: Finalize project organization by features
     + refactor: Separate timer stuff by files
-    - feat: Warn user about duration limits
+    + feat: Warn user about duration limits
+    - refactor(useTimerEffect): Separate setting and clearing timeout for SUBTRACT action
     - refactor: Rename setTime to setDuration
 
   0.3.0 — Customize preset durations via local storage:

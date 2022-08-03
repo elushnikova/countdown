@@ -8,10 +8,10 @@ import useTimerContext from './features/timer/useTimerContext';
 import useSidebarContext from './features/settings/useSidebarContext';
 
 function App() {
-  const { time } = useTimerContext();
+  const { timer } = useTimerContext();
   const { open } = useSidebarContext();
 
-  const timerTransitions = useTransition(time === 0, {
+  const timerTransitions = useTransition(timer.duration === 0, {
     from: { top: -9999 },
     enter: { top: 0 },
   });
@@ -26,11 +26,11 @@ function App() {
 
   return (
     <main className={styles.container}>
-      <Toggle isInverted={!time} />
+      <Toggle isInverted={!timer.duration} />
       <Timer />
       {timerTransitions((props, item) => item && <TimeOver style={props} />)}
       {settingsTransitions(
-        (props, item) => item && <Settings style={props} isInverted={!time} />,
+        (props, item) => item && <Settings style={props} isInverted={!timer.duration} />,
       )}
     </main>
   );

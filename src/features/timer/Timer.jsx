@@ -11,35 +11,38 @@ import styles from './Timer.module.scss';
 import useTimerContext from './useTimerContext';
 import useQueryInputEffect from '../duration/useQueryInputEffect';
 import useTimerEffect from './useTimerEffect';
+import TimerAlert from './TimerAlert.jsx';
 
 function Timer() {
-  const { time } = useTimerContext();
+  const { timer } = useTimerContext();
 
   useQueryInputEffect();
   useTimerEffect();
 
   return (
     <>
-      {Boolean(time) && (
+      {Boolean(timer.duration) && (
         <div
-          className={`${styles.block} ${lessThanMinute(time) && styles.single}`}
+          className={`${styles.block} ${lessThanMinute(timer.duration) && styles.single}`}
         >
-          {!lessThanMinute(time) && (
+          {!lessThanMinute(timer.duration) && (
             <>
               <span className={styles.minutes}>
-                {padNumber(truncate(divideByMinute(time)))}
+                {padNumber(truncate(divideByMinute(timer.duration)))}
               </span>
               <span className={styles.separator}>:</span>
             </>
           )}
 
           <span className={styles.seconds}>
-            {lessThanTenSec(time)
-              ? moduloByMinute(time) / second
-              : padNumber(moduloByMinute(time) / second)}
+            {lessThanTenSec(timer.duration)
+              ? moduloByMinute(timer.duration) / second
+              : padNumber(moduloByMinute(timer.duration) / second)}
           </span>
         </div>
       )}
+
+      {Boolean(timer.error) && <TimerAlert />}
     </>
   );
 }

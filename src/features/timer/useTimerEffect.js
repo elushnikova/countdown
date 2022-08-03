@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
+import { scheduleErrorClearing, cancelScheduledErrorClearing } from './utils/lib';
 import { second } from './utils/presets';
 import useTimerContext from './useTimerContext';
 
 const useTimerEffect = () => {
-  const { time, dispatch, action } = useTimerContext();
+  const { timer, dispatch, action } = useTimerContext();
 
   const startTimer = () => {
-    if (time <= 0) {
+    const clearError = () => dispatch(action.clearError());
+    const scheduledClearing = scheduleErrorClearing(timer.error, clearError);
+
+    if (timer.duration <= 0) {
       return undefined;
     }
 
@@ -16,10 +20,11 @@ const useTimerEffect = () => {
 
     return () => {
       clearTimeout(id);
+      cancelScheduledErrorClearing(timer.error, scheduledClearing);
     };
   };
 
-  useEffect(startTimer, [time, dispatch, action]);
+  useEffect(startTimer, [timer.duration, timer.error, dispatch, action]);
 };
 
 export default useTimerEffect;

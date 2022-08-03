@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { preset, second } from '../timer/utils/presets';
+import { second } from '../timer/utils/presets';
 import useConfigContext from '../config/useConfigContext';
 import useTimerContext from '../timer/useTimerContext';
 
@@ -24,15 +24,6 @@ const useQueryInputEffect = () => {
 
     if (replaceHistoryEntry) {
       window.history.replaceState(null, '', document.location.origin);
-    }
-
-    if (lessThanMinimum(duration)) {
-      window.location.assign(`/?s=${preset.default / second}`);
-      return;
-    }
-
-    if (moreThanMaximum(duration)) {
-      window.location.assign(`/?s=${preset.maximum / second}`);
     }
   };
 
