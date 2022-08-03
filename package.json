@@ -1,6 +1,6 @@
 {
   "name": "countdown",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -28,7 +28,10 @@
       "react-app",
       "react-app/jest",
       "airbnb-base"
-    ]
+    ],
+    "rules": {
+      "no-nested-ternary": "off"
+    }
   },
   "browserslist": {
     "production": [

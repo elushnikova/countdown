@@ -1,12 +1,12 @@
-import useTimerContext from '../../hooks/useTimerContext';
+import useTimerContext from '../timer/useTimerContext';
 import styles from './SettingsButton.module.scss';
 
-function SettingsButton({ time, children, isInverted }) {
-  const { setTime } = useTimerContext();
+function SettingsButton({ ms, children, isInverted }) {
+  const { dispatch, action } = useTimerContext();
 
   return (
     <button
-      onClick={() => setTime(time)}
+      onClick={() => dispatch(action.setDuration(ms))}
       className={`${styles.button} ${isInverted && styles.inverted}`}
     >
       {children}

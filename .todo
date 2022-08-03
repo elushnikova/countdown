@@ -1,5 +1,5 @@
 Countdown:
-  0.1.0. Basic countdown:
+  0.1.0 — Countdown and basic presets:
     + Basic countdown in seconds
     + Show minutes and seconds
     + Style
@@ -13,7 +13,7 @@ Countdown:
     + fix: Hide timer behind settings
     + fix: Don't autoclose settings, if there was interaction
 
-  0.2.0. Accept seconds via URL query:
+  0.2.0 — Customize duration (in seconds) via URL query:
     + chore: Autoupdate lockfile to v2
     + docs: Plan 0.2.0 changes
     + chore: Update project name
@@ -25,7 +25,7 @@ Countdown:
     + refactor: Separate contexts
     + chore: Bump project version
 
-  0.2.1. Upgrade to React 18:
+  0.2.1 — Upgrade to React 18:
     Separate config and timer contexts
     Move query and timer effects to custom hooks
     Upgrade to React 18
@@ -44,7 +44,7 @@ Countdown:
 
       Generate new CRA project, copy files, adjust package.json.
 
-  0.2.2. Sort out project dependencies:
+  0.2.2 — Sort out project dependencies:
     + docs: Add scope for 0.2.2
     + style: Use .jsx for files with heavy JSX usage
 
@@ -69,8 +69,92 @@ Countdown:
 
     + chore: Bump project version to 0.2.2
 
-  0.3.0:
-    - feat: Accept minutes via form
+  0.2.3 — Protect against invalid input via URL query:
+    + refactor: Move presets to hardcoded array
+    + fix(SettingsButton): Accept 1s as minimum duration
+    + refactor: Simplify name for useTimerEffect
+    + fix(useTimerEffect): Stop timer if provided duration is less than 1s
+    + refactor: Encapsulate logic for changing timer value
+    + style: Allow nested ternary operators
+    + fix(timerReducer): Protect from invalid action payload
+    + refactor: Simplify name for useQueryInputEffect
+    + chore: Leave only 5 and 10 minute presets
+    + refactor: Remove maximum duration limit from config
+    + fix: Redirect to URL with proper query if limit is exceeded
+    + refactor: DRY minimum/maximum checks
+    + refactor(timerReducer): Write obvious conditions
+    + style: Break down object property list by lines
+    + refactor: Move timer stuff to features/timer
+    + refactor: Move settings stuff to features/settings
+    + refactor: Finalize project organization by features
+    + refactor: Separate timer stuff by files
+    + feat: Warn user about duration limits
+    + refactor(timer): Unify setting/clearing timeouts
+    + refactor: Rename setTime to setDuration
+    + chore: Bump project version to 0.2.3
+
+  0.3.0 — Customize preset durations via local storage:
+    - refactor: Store presets in local storage
+      Title and seconds only.
+
+      Add to default presets
+      5 min break (dark blue / yellow)
+      10 min break (dark blue / yellow)
+
+    - fix: Sanitize user input from local storage
+
+  0.3.1 — Feature driven development:
+    + research
+      GitHub experience
+        production - toggle flags via query string
+        development - toggle from command line
+        automated tests - toggle in code
+        CI - one build with all flags disabled, another with all flags enabled
+        https://github.blog/2021-04-27-ship-code-faster-safer-feature-flags/
+      
+      Feature flag driven development
+        https://featureflags.io
+
+      Post by Pete Hodgson
+        https://martinfowler.com/articles/feature-toggles.html
+    
+    - refactor: Organize project by features
+      Feature list
+        1. countdown
+        2. basic presets (duration)
+        2. custom duration — customize countdown duration (in seconds) by URL query
+        3. presets (duration + colors + message) — choose, start, create, edit, delete
+        4. shareable countdown — share link to specific running instance of that countdown
+          improvement of existing feature
+
+    - chore: Install React Feature Toggles by ParallelDrive
+      https://www.npmjs.com/package/@paralleldrive/react-feature-toggles
+    
+    - refactor: Setup feature flags
+
+  0.4.0 — Custom presets:
+    - feat: Store title, colors, final message in presets
+
+      Add to default presets
+      25 min work (yellow / dark blue)
+      5 sec DEBUG MODE (red / yellow)
+
+  0.5.0 — Select preset with UI:
+    - feat: Select preset with UI
+
+  0.6.0 — Edit preset with UI:
+    - feat: Edit preset
+
+  0.7.0 — Create preset with UI:
+    - feat: Create preset
+
+  0.8.0 — Delete preset with UI:
+    - feat: Delete preset
+
+  1.0.0 — Presets release:
+    Customize message, colors, time and save in local storage.
+    Feature flag
+    - feat: Add design for presets
 
   Backlog:
     - refactor: Pass isInverted via context
@@ -88,23 +172,18 @@ Countdown:
       x chore: Remove dependency from Sass
 
   Milestones:
-    + Countdown for lecture breaks — v0.1.0
-    + Customize countdown time - v0.2.0
-    + Upgrade to React 18 — v.0.2.1
-    - Customize countdown time via UI - v0.3.0
-    - Presets in local storage - v0.4.0
-      Customize message, colors, time and save as a preset
+    + Countdown for lecture breaks — 0.1.0
+    + Customize countdown time - 0.2.0
+    + Upgrade to React 18 — 0.2.1
+    - Presets release - 1.0.0
 
-      Presets?
-      Lecture interval
-      Lecture break
-      Interview exam duration
-      Code review duration
 
-    - Shareable countdowns? - v1.0.0
+    - Shareable countdowns? - 2.0.0
       Backend. DB?
+      Editor can edit and share timer.
+      Reader can share timer.
+
+      Unauthorized visitor can add up to 5 presets, each 25 min max.
 
     - Presets in DB?
       Backend and DB
-
-      
