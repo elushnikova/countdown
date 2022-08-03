@@ -91,7 +91,7 @@ Countdown:
     + feat: Warn user about duration limits
     + refactor(timer): Unify setting/clearing timeouts
     + refactor: Rename setTime to setDuration
-    - chore: Bump project version to 0.2.3
+    + chore: Bump project version to 0.2.3
 
   0.3.0 — Customize preset durations via local storage:
     - refactor: Store presets in local storage
