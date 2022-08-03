@@ -20,7 +20,7 @@ const useQueryInputEffect = () => {
     const seconds = parseInt(querySeconds, 10);
     const duration = seconds * second;
 
-    dispatch(action.setTime(duration));
+    dispatch(action.setDuration(duration));
 
     if (replaceHistoryEntry) {
       window.history.replaceState(null, '', document.location.origin);

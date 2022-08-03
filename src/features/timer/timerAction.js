@@ -5,7 +5,7 @@ const type = {
 };
 
 const timerAction = {
-  setTime: (ms) => ({ type: type.SET, payload: ms }),
+  setDuration: (ms) => ({ type: type.SET, payload: ms }),
   subtract: () => ({ type: type.SUBTRACT }),
   clearError: () => ({ type: type.CLEAR_ERROR }),
 };

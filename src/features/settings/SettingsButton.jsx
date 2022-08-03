@@ -6,7 +6,7 @@ function SettingsButton({ ms, children, isInverted }) {
 
   return (
     <button
-      onClick={() => dispatch(action.setTime(ms))}
+      onClick={() => dispatch(action.setDuration(ms))}
       className={`${styles.button} ${isInverted && styles.inverted}`}
     >
       {children}
