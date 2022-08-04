@@ -97,18 +97,28 @@ Countdown:
     + fix(TimerAlert): Add spacing and centralize text
     + fix(TimerAlert): Break by new line
     + chore: Bump project version to 0.2.4
-    
+
   0.3.0 — Customize preset durations via local storage:
-    - refactor: Store presets in local storage
-      Title and seconds only.
+    + feat: Accept presets via localStorage
+      Title and duration in _seconds_ only.
 
       Add to default presets
       5 min break (dark blue / yellow)
       10 min break (dark blue / yellow)
 
-    - fix: Sanitize user input from local storage
+    + chore: Bump project version to 0.3.0
 
-  0.3.1 — Feature driven development:
+  0.3.1 — Fixes:
+    - fix: Leave error message when closing Settings sidebar
+      Closing Settings sidebar hides error message immediately
+
+    - refactor: Simplify second-ms conversions
+
+    - fix: Avoid text overlap on mobile screens:
+      https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+      https://github.com/w3c/csswg-drafts/issues/4329
+
+  0.3.2 — Feature driven development:
     + research
       GitHub experience
         production - toggle flags via query string
