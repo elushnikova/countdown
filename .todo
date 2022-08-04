@@ -108,7 +108,21 @@ Countdown:
 
     + chore: Bump project version to 0.3.0
 
-  0.3.1 — Fixes:
+  0.3.1 — Export/import presets via JSON:
+    + refactor: Use SettingsButton for non-preset items
+    - feat: Export presets to JSON
+      [{"title":"5 мин","duration":300},{"title":"10 мин","duration":600},{"title":"15 мин","duration":900},{"title":"25 мин","duration":1500}]
+
+    - feat: Import presets from JSON file
+
+    - chore: Bump project version to 0.3.1
+
+  0.3.x:
+    - fix(SettingsButton): Do not select text on touch
+      Fix bug on touch screens — tap on button leads to text controls (copy/select) appearing.
+
+    - feat: Occupy full screen with Settings
+
     - fix: Leave error message when closing Settings sidebar
       Closing Settings sidebar hides error message immediately
 
@@ -118,7 +132,7 @@ Countdown:
       https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
       https://github.com/w3c/csswg-drafts/issues/4329
 
-  0.3.2 — Feature driven development:
+  0.3.x — Feature driven development:
     + research
       GitHub experience
         production - toggle flags via query string
