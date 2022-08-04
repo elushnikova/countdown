@@ -110,7 +110,7 @@ Countdown:
 
   0.3.1 — Export/import presets via JSON:
     + refactor: Use SettingsButton for non-preset items
-    - feat: Export presets to JSON
+    + feat: Export presets to JSON file
       [{"title":"5 мин","duration":300},{"title":"10 мин","duration":600},{"title":"15 мин","duration":900},{"title":"25 мин","duration":1500}]
 
     - feat: Import presets from JSON file

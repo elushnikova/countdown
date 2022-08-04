@@ -9,10 +9,13 @@ const ConfigProvider = ({ children }) => {
   // Enable to remove URL query after passing amount of seconds
   const [replaceHistoryEntry] = useState(false);
 
+  const [showExport] = useState(false);
+
   return (
     <ConfigContext.Provider value={{
       queryKeySeconds,
       replaceHistoryEntry,
+      showExport,
     }}>
       {children}
     </ConfigContext.Provider>
