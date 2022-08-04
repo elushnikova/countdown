@@ -106,13 +106,17 @@ Countdown:
       5 min break (dark blue / yellow)
       10 min break (dark blue / yellow)
 
-    - refactor: Simplify second-ms conversions
-    - chore: Bump project version to 0.3.0
+    + chore: Bump project version to 0.3.0
 
-  0.3.1 — Avoid text overlap on mobile screens:
-    https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-    https://github.com/w3c/csswg-drafts/issues/4329
-    x fix: Calculate 100vh height via JS
+  0.3.1 — Fixes:
+    - fix: Leave error message when closing Settings sidebar
+      Closing Settings sidebar hides error message immediately
+
+    - refactor: Simplify second-ms conversions
+
+    - fix: Avoid text overlap on mobile screens:
+      https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+      https://github.com/w3c/csswg-drafts/issues/4329
 
   0.3.2 — Feature driven development:
     + research
