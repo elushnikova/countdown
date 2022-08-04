@@ -1,11 +1,19 @@
+import { useMemo } from 'react';
 import { animated } from 'react-spring';
+import useLocalStorage from '../presets/useLocalStorage';
 import useSidebarContext from './useSidebarContext';
 import SettingsButton from './SettingsButton.jsx';
-import presets, { second } from '../timer/utils/presets';
+import initialPresets, { second } from '../timer/utils/presets';
 import classes from './Settings.module.scss';
 
 function Settings({ style, isInverted }) {
   const { setOpen, timeoutId, setTimeoutId } = useSidebarContext();
+  const mapMsPresetsToSeconds = () => initialPresets.map((preset) => ({
+    ...preset,
+    duration: preset.duration / second,
+  }));
+  const presetsSeconds = useMemo(mapMsPresetsToSeconds, []);
+  const [presets] = useLocalStorage('presets', presetsSeconds);
 
   function handleSettingsClick(e) {
     e.stopPropagation();
@@ -29,7 +37,7 @@ function Settings({ style, isInverted }) {
           {
             presets.map((preset) => (
               <li key={preset.title}>
-                <SettingsButton isInverted={isInverted} ms={preset.duration}>
+                <SettingsButton isInverted={isInverted} ms={preset.duration * second}>
                   {preset.title}
                 </SettingsButton>
               </li>

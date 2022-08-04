@@ -10,6 +10,7 @@ const preset = {
   get maximum() { return 45 * minute; },
 };
 
+/** Duration in milliseconds */
 const presets = [
   { title: '5 мин', duration: preset.fiveMin },
   { title: '10 мин', duration: preset.tenMin },
