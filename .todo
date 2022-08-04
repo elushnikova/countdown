@@ -95,9 +95,8 @@ Countdown:
   
   0.2.4 — Style TimerAlert text:
     + fix(TimerAlert): Add spacing and centralize text
-    - fix(TimerAlert): Break by new line
+    + fix(TimerAlert): Break by new line
     
-
   0.3.0 — Customize preset durations via local storage:
     - refactor: Store presets in local storage
       Title and seconds only.
