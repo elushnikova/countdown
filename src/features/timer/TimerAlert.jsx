@@ -19,7 +19,15 @@ function TimerAlert() {
   return transitions(
     (transitionStyles, item) => item && (
       <animated.div className={styles.alert} style={transitionStyles}>
-        {timer.error}
+        {
+          timer.error
+            .split('\n')
+            .map((line) => (
+              <p key={line} className={styles.alertText}>
+                {line}
+              </p>
+            ))
+        }
       </animated.div>
     ),
   );

@@ -11,7 +11,7 @@ const timerReducer = (timer, action) => {
       if (isInvalid) {
         return {
           ...timer,
-          error: `Неподходящее значение. Запускаю таймер на ${preset.default / minute} минут.`,
+          error: `Неподходящее значение.\nЗапускаю таймер на ${preset.default / minute} минут.`,
           duration: preset.default,
         };
       }
@@ -19,7 +19,7 @@ const timerReducer = (timer, action) => {
       if (lessThanMinimum(duration)) {
         return {
           ...timer,
-          error: `Неподходящее значение. Запускаю таймер на ${preset.default / minute} минут.`,
+          error: `Неподходящее значение.\nЗапускаю таймер на ${preset.default / minute} минут.`,
           duration: preset.default,
         };
       }
@@ -27,7 +27,7 @@ const timerReducer = (timer, action) => {
       if (moreThanMaximum(duration)) {
         return {
           ...timer,
-          error: `Многовато будет :) Запускаю таймер на ${preset.maximum / minute} минут.`,
+          error: `Многовато будет :)\nЗапускаю таймер на ${preset.maximum / minute} минут.`,
           duration: preset.maximum,
         };
       }
