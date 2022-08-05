@@ -112,8 +112,13 @@ Countdown:
     + refactor: Use SettingsButton for non-preset items
     + feat: Export presets to JSON file
       [{"title":"5 мин","duration":300},{"title":"10 мин","duration":600},{"title":"15 мин","duration":900},{"title":"25 мин","duration":1500}]
-
+    
+    + refactor: Separate ExportButton to own file
     - feat: Import presets from JSON file
+    - fix(SettingsButton): Limit height by one line
+
+    - ? style: Use arrow functions saved to const instead of function definitions
+      Settings.jsx
 
     - chore: Bump project version to 0.3.1
 
@@ -128,9 +133,14 @@ Countdown:
 
     - refactor: Simplify second-ms conversions
 
-    - fix: Avoid text overlap on mobile screens:
+    x fix: Avoid text overlap on mobile screens:
       https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
       https://github.com/w3c/csswg-drafts/issues/4329
+
+    - feat (Артём)
+      Было бы круто иметь возможность написать m=7
+
+    - feat Fullscreen (Юра)
 
   0.3.x — Feature driven development:
     + research
