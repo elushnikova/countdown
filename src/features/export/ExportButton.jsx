@@ -1,11 +1,9 @@
 import useConfigContext from '../config/useConfigContext';
-import useTimerContext from '../timer/useTimerContext';
 import useLocalStorage from '../presets/useLocalStorage';
 import SettingsButton from '../settings/SettingsButton.jsx';
 
 function ExportButton() {
   const { showExport } = useConfigContext();
-  const { timer } = useTimerContext();
   const [presets] = useLocalStorage('presets');
 
   const exportPresets = async () => {
@@ -27,10 +25,7 @@ function ExportButton() {
   };
 
   return (
-    <SettingsButton
-      isInverted={!timer.duration}
-      onClick={exportPresets}
-    >
+    <SettingsButton onClick={exportPresets}>
       Экспорт
     </SettingsButton>
   );

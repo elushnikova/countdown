@@ -26,11 +26,11 @@ function App() {
 
   return (
     <main className={styles.container}>
-      <Toggle isInverted={!timer.duration} />
+      <Toggle />
       <Timer />
       {timerTransitions((props, item) => item && <TimeOver style={props} />)}
       {settingsTransitions(
-        (props, item) => item && <Settings style={props} isInverted={!timer.duration} />,
+        (props, item) => item && <Settings style={props} />,
       )}
     </main>
   );

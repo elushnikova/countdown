@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import useSidebarContext from './useSidebarContext';
+import useTimerContext from '../timer/useTimerContext';
 import { second } from '../timer/utils/presets';
 import styles from './Toggle.module.scss';
 
@@ -7,7 +8,8 @@ import styles from './Toggle.module.scss';
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
-function Toggle({ isInverted }) {
+function Toggle() {
+  const { isInverted } = useTimerContext();
   const {
     open,
     setOpen,

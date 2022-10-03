@@ -108,19 +108,26 @@ Countdown:
 
     + chore: Bump project version to 0.3.0
 
-  0.3.1 — Export/import presets via JSON:
+  0.4.0 — Export/import presets via JSON:
     + refactor: Use SettingsButton for non-preset items
     + feat: Export presets to JSON file
       [{"title":"5 мин","duration":300},{"title":"10 мин","duration":600},{"title":"15 мин","duration":900},{"title":"25 мин","duration":1500}]
-    
     + refactor: Separate ExportButton to own file
+    + refactor: Separate closeSidebar function
+    + refactor: Separate isInverted to TimerContext
+
     - feat: Import presets from JSON file
+    - fix: Render error message conditionally but avoid jumping via CSS
+    - fix: Stop extra rerenders for Settings and SettingsButton
+    - fix: Rerender Settings on import
+
     - fix(SettingsButton): Limit height by one line
-
+    
     - ? style: Use arrow functions saved to const instead of function definitions
-      Settings.jsx
-
+    Settings.jsx
+    
     - chore: Bump project version to 0.3.1
+    - docs: Add instructions to README
 
   0.3.x:
     - fix(SettingsButton): Do not select text on touch
@@ -224,5 +231,16 @@ Countdown:
 
       Unauthorized visitor can add up to 5 presets, each 25 min max.
 
+    - Popular countdowns? — 2.1.0
+      Дашборд Эльбруса перерывы
+      
+      Например
+        Лекция Лены
+        Лекция Артема 
+        Лекция Леши
+        etc.
+
     - Presets in DB?
       Backend and DB
+
+    - Websocket room for each countdown?

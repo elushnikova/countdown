@@ -3,12 +3,14 @@ import { animated } from 'react-spring';
 import useConfigContext from '../config/useConfigContext';
 import useLocalStorage from '../presets/useLocalStorage';
 import useSidebarContext from './useSidebarContext';
+import useTimerContext from '../timer/useTimerContext';
 import SettingsButton from './SettingsButton.jsx';
 import ExportButton from '../export/ExportButton.jsx';
 import initialPresets, { second } from '../timer/utils/presets';
 import classes from './Settings.module.scss';
 
-function Settings({ style, isInverted }) {
+function Settings({ style }) {
+  const { isInverted } = useTimerContext();
   const { showExport } = useConfigContext();
   const { closeSidebar, timeoutId, setTimeoutId } = useSidebarContext();
   const mapMsPresetsToSeconds = () => initialPresets.map((preset) => ({
@@ -36,10 +38,7 @@ function Settings({ style, isInverted }) {
           {
             presets.map((preset) => (
               <li key={preset.title}>
-                <SettingsButton
-                  isInverted={isInverted}
-                  ms={preset.duration * second}
-                >
+                <SettingsButton ms={preset.duration * second}>
                   {preset.title}
                 </SettingsButton>
               </li>
