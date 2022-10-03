@@ -13,13 +13,11 @@ function Toggle({ isInverted }) {
     setOpen,
     timeoutId,
     setTimeoutId,
+    closeSidebar,
   } = useSidebarContext();
 
   function handleChange() {
-    const id = setTimeout(() => {
-      setOpen(false);
-    }, 5 * second);
-
+    const id = setTimeout(closeSidebar, 5 * second);
     setTimeoutId(id);
     setOpen(!open);
   }

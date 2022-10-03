@@ -10,7 +10,7 @@ import classes from './Settings.module.scss';
 
 function Settings({ style, isInverted }) {
   const { showExport } = useConfigContext();
-  const { setOpen, timeoutId, setTimeoutId } = useSidebarContext();
+  const { closeSidebar, timeoutId, setTimeoutId } = useSidebarContext();
   const mapMsPresetsToSeconds = () => initialPresets.map((preset) => ({
     ...preset,
     duration: preset.duration / second,
@@ -21,16 +21,12 @@ function Settings({ style, isInverted }) {
   function handleSettingsClick(e) {
     e.stopPropagation();
     clearTimeout(timeoutId);
-
-    const id = setTimeout(() => {
-      setOpen(false);
-    }, 5 * second);
-
+    const id = setTimeout(closeSidebar, 5 * second);
     setTimeoutId(id);
   }
 
   return (
-    <div className={classes.overlay} onClick={() => setOpen(false)}>
+    <div className={classes.overlay} onClick={closeSidebar}>
       <animated.div
         className={`${classes.block} ${isInverted && classes.inverted}`}
         style={style}

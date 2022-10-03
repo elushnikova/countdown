@@ -1,10 +1,15 @@
-import { useContext, useState, createContext } from 'react';
+import {
+  useContext, useState, createContext, useEffect,
+} from 'react';
 
 const SidebarContext = createContext();
 
 const SidebarProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
+  const closeSidebar = () => setOpen(false);
+
+  useEffect(() => setOpen(true), [setOpen]);
 
   return (
     <SidebarContext.Provider value={{
@@ -12,6 +17,7 @@ const SidebarProvider = ({ children }) => {
       setOpen,
       timeoutId,
       setTimeoutId,
+      closeSidebar,
     }}>
       {children}
     </SidebarContext.Provider>
