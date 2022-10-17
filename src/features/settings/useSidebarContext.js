@@ -1,5 +1,5 @@
 import {
-  useContext, useState, createContext, useEffect,
+  useContext, useState, createContext,
 } from 'react';
 
 const SidebarContext = createContext();
@@ -7,9 +7,8 @@ const SidebarContext = createContext();
 const SidebarProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
+  const openSidebar = () => setOpen(true);
   const closeSidebar = () => setOpen(false);
-
-  useEffect(() => setOpen(true), [setOpen]);
 
   return (
     <SidebarContext.Provider value={{
@@ -17,6 +16,7 @@ const SidebarProvider = ({ children }) => {
       setOpen,
       timeoutId,
       setTimeoutId,
+      openSidebar,
       closeSidebar,
     }}>
       {children}

@@ -116,21 +116,17 @@ Countdown:
     + refactor: Separate closeSidebar function
     + refactor: Separate isInverted to TimerContext
     + fix: Keep settings open unless closed manually
+    + feat: Import presets from JSON file
+    - docs: Add instructions to README
+    - chore: Bump project version to 0.4.0
 
-    - feat: Import presets from JSON file
-    - fix: Render error message conditionally but avoid jumping via CSS
+  0.4.x:
     - fix: Stop extra rerenders for Settings and SettingsButton
-    - fix: Rerender Settings on import
-
+    - fix: Render feedback message conditionally but avoid jumping via CSS @low
     - fix(SettingsButton): Limit height by one line
-    
     - ? style: Use arrow functions saved to const instead of function definitions
     Settings.jsx
-    
-    - chore: Bump project version to 0.3.1
-    - docs: Add instructions to README
 
-  0.3.x:
     - fix(SettingsButton): Do not select text on touch
       Fix bug on touch screens — tap on button leads to text controls (copy/select) appearing.
 

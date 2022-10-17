@@ -6,8 +6,10 @@ import useSidebarContext from './useSidebarContext';
 import useTimerContext from '../timer/useTimerContext';
 import SettingsButton from './SettingsButton.jsx';
 import ExportButton from '../export/ExportButton.jsx';
+import ImportForm from '../export/ImportForm.jsx';
 import initialPresets, { second } from '../timer/utils/presets';
 import classes from './Settings.module.scss';
+import useQueryToggleEffect from '../export/useQueryToggleEffect';
 
 function Settings({ style }) {
   const { isInverted } = useTimerContext();
@@ -21,6 +23,8 @@ function Settings({ style }) {
   const [presets] = useLocalStorage('presets', presetsSeconds);
 
   const stopClickPropagation = (event) => event.stopPropagation();
+
+  useQueryToggleEffect();
 
   return (
     <div
@@ -43,6 +47,7 @@ function Settings({ style }) {
             ))
           }
           { showExport && (<li><ExportButton /></li>) }
+          { showExport && (<li><ImportForm /></li>) }
         </ul>
       </animated.div>
     </div>
