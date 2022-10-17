@@ -12,7 +12,7 @@ import classes from './Settings.module.scss';
 function Settings({ style }) {
   const { isInverted } = useTimerContext();
   const { showExport } = useConfigContext();
-  const { closeSidebar, timeoutId, setTimeoutId } = useSidebarContext();
+  const { closeSidebar } = useSidebarContext();
   const mapMsPresetsToSeconds = () => initialPresets.map((preset) => ({
     ...preset,
     duration: preset.duration / second,
@@ -20,19 +20,17 @@ function Settings({ style }) {
   const presetsSeconds = useMemo(mapMsPresetsToSeconds, []);
   const [presets] = useLocalStorage('presets', presetsSeconds);
 
-  function handleSettingsClick(e) {
-    e.stopPropagation();
-    clearTimeout(timeoutId);
-    const id = setTimeout(closeSidebar, 5 * second);
-    setTimeoutId(id);
-  }
+  const stopClickPropagation = (event) => event.stopPropagation();
 
   return (
-    <div className={classes.overlay} onClick={closeSidebar}>
+    <div
+      className={classes.overlay}
+      onClick={closeSidebar}
+    >
       <animated.div
         className={`${classes.block} ${isInverted && classes.inverted}`}
+        onClick={stopClickPropagation}
         style={style}
-        onClick={handleSettingsClick}
       >
         <ul className={classes.list}>
           {

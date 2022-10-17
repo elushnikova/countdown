@@ -115,6 +115,7 @@ Countdown:
     + refactor: Separate ExportButton to own file
     + refactor: Separate closeSidebar function
     + refactor: Separate isInverted to TimerContext
+    + fix: Keep settings open unless closed manually
 
     - feat: Import presets from JSON file
     - fix: Render error message conditionally but avoid jumping via CSS

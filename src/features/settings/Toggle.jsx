@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import useSidebarContext from './useSidebarContext';
 import useTimerContext from '../timer/useTimerContext';
-import { second } from '../timer/utils/presets';
 import styles from './Toggle.module.scss';
 
 /**
@@ -14,22 +13,16 @@ function Toggle() {
     open,
     setOpen,
     timeoutId,
-    setTimeoutId,
-    closeSidebar,
   } = useSidebarContext();
 
-  function handleChange() {
-    const id = setTimeout(closeSidebar, 5 * second);
-    setTimeoutId(id);
-    setOpen(!open);
-  }
+  const toggleSidebar = () => setOpen((prev) => !prev);
 
   useEffect(() => () => clearTimeout(timeoutId), [timeoutId]);
 
   return (
     <>
       <label className={`${styles.toggle} ${isInverted && styles.inverted}`}>
-        <input type="checkbox" checked={open} onChange={handleChange} />
+        <input type="checkbox" checked={open} onChange={toggleSidebar} />
         <div>
           <div>
             <span></span>
