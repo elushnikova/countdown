@@ -117,7 +117,7 @@ Countdown:
     + refactor: Separate isInverted to TimerContext
     + fix: Keep settings open unless closed manually
     + feat: Import presets from JSON file
-    - docs: Add instructions to README
+    + docs: Add instructions to README
     - chore: Bump project version to 0.4.0
 
   0.4.x:
