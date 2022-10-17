@@ -118,7 +118,7 @@ Countdown:
     + fix: Keep settings open unless closed manually
     + feat: Import presets from JSON file
     + docs: Add instructions to README
-    - chore: Bump project version to 0.4.0
+    + chore: Bump project version to 0.4.0
 
   0.4.x:
     - fix: Stop extra rerenders for Settings and SettingsButton
