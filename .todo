@@ -120,6 +120,15 @@ Countdown:
     + docs: Add instructions to README
     + chore: Bump project version to 0.4.0
 
+  0.5.0:
+    + feat: Accept minutes via URL query parameters
+      Артём Бахарев: Было бы круто иметь возможность написать m=7
+    + docs: Update README
+    + chore: Bump project version to 0.5.0
+    
+  1.0.0:
+    - feat: Share countdowns
+    
   0.4.x:
     - fix: Stop extra rerenders for Settings and SettingsButton
     - fix: Render feedback message conditionally but avoid jumping via CSS @low
@@ -140,10 +149,7 @@ Countdown:
     x fix: Avoid text overlap on mobile screens:
       https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
       https://github.com/w3c/csswg-drafts/issues/4329
-
-    - feat (Артём)
-      Было бы круто иметь возможность написать m=7
-
+  
     - feat Fullscreen (Юра)
 
   0.3.x — Feature driven development:

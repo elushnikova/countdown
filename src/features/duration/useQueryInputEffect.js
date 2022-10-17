@@ -1,24 +1,23 @@
 import { useEffect } from 'react';
-import { second } from '../timer/utils/presets';
+import { minute, second } from '../timer/utils/presets';
 import useConfigContext from '../config/useConfigContext';
 import useTimerContext from '../timer/useTimerContext';
 
 const useQueryInputEffect = () => {
-  const {
-    dispatch, action, lessThanMinimum, moreThanMaximum,
-  } = useTimerContext();
-  const { queryKeySeconds, replaceHistoryEntry } = useConfigContext();
+  const { action, dispatch } = useTimerContext();
+  const { queryKeyMinutes, queryKeySeconds, replaceHistoryEntry } = useConfigContext();
 
   const getQuerySeconds = () => {
     const queryString = new URLSearchParams(document.location.search);
+    const queryMinutes = queryString.get(queryKeyMinutes);
     const querySeconds = queryString.get(queryKeySeconds);
+    const noQueryInput = !queryMinutes && !querySeconds;
 
-    if (!querySeconds) {
-      return;
-    }
+    if (noQueryInput) return;
 
-    const seconds = parseInt(querySeconds, 10);
-    const duration = seconds * second;
+    const minutes = parseInt(queryMinutes, 10) || 0;
+    const seconds = parseInt(querySeconds, 10) || 0;
+    const duration = (minutes * minute) + (seconds * second);
 
     dispatch(action.setDuration(duration));
 
@@ -30,10 +29,9 @@ const useQueryInputEffect = () => {
   useEffect(getQuerySeconds, [
     action,
     dispatch,
+    queryKeyMinutes,
     queryKeySeconds,
     replaceHistoryEntry,
-    lessThanMinimum,
-    moreThanMaximum,
   ]);
 };
 
