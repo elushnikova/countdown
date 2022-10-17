@@ -1,35 +1,28 @@
 import { useEffect } from 'react';
 import useSidebarContext from './useSidebarContext';
-import { second } from '../timer/utils/presets';
+import useTimerContext from '../timer/useTimerContext';
 import styles from './Toggle.module.scss';
 
 /**
  * Adapted from code by Aaron Iker (https://codepen.io/aaroniker/details/LXVqxR)
  * Designed by Leonid Arestov (https://dribbble.com/shots/4758991-Menu-close-icon-transition)
  */
-function Toggle({ isInverted }) {
+function Toggle() {
+  const { isInverted } = useTimerContext();
   const {
     open,
     setOpen,
     timeoutId,
-    setTimeoutId,
   } = useSidebarContext();
 
-  function handleChange() {
-    const id = setTimeout(() => {
-      setOpen(false);
-    }, 5 * second);
-
-    setTimeoutId(id);
-    setOpen(!open);
-  }
+  const toggleSidebar = () => setOpen((prev) => !prev);
 
   useEffect(() => () => clearTimeout(timeoutId), [timeoutId]);
 
   return (
     <>
       <label className={`${styles.toggle} ${isInverted && styles.inverted}`}>
-        <input type="checkbox" checked={open} onChange={handleChange} />
+        <input type="checkbox" checked={open} onChange={toggleSidebar} />
         <div>
           <div>
             <span></span>

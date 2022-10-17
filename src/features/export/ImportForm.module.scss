@@ -1,0 +1,74 @@
+$main: #001d3d;
+$accent: #ffd166;
+$dot: 8px;
+
+.import {
+  @media screen and (max-width: 549px) {
+    display: none;
+  }
+
+  width: 550px;
+  padding: 1rem 0.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  h6 {
+    margin-bottom: 0;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button,
+  input,
+  input::file-selector-button {
+    font-family: inherit;
+  }
+
+  button,
+  input::file-selector-button {
+    color: $main;
+    background-color: $accent;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+  }
+
+  input::file-selector-button {
+    margin-right: 1rem;
+  }
+
+  input {
+    border-bottom: 1px solid $accent;
+  }
+
+  button,
+  label,
+  input,
+  output,
+  h6 {
+    font-size: 1.5rem;
+  }
+
+  output {
+    margin-top: 1rem;
+  }
+}
+
+.import.inverted {
+  color: $main;
+
+  button,
+  input::file-selector-button {
+    color: $accent;
+    background-color: $main;
+  }
+
+  input {
+    border-bottom: 1px solid $main;
+  }
+}

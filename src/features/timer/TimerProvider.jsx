@@ -20,6 +20,7 @@ const TimerProvider = ({ children }) => {
       action: timerAction,
       lessThanMinimum,
       moreThanMaximum,
+      isInverted: !timer.duration,
     }}>
       {children}
     </TimerContext.Provider>
