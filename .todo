@@ -121,7 +121,7 @@ Countdown:
     + chore: Bump project version to 0.4.0
 
   0.5.0:
-    - feat: Accept minutes via URL query parameters
+    + feat: Accept minutes via URL query parameters
       Артём Бахарев: Было бы круто иметь возможность написать m=7
     
   1.0.0:

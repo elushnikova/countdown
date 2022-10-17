@@ -6,6 +6,9 @@ const ConfigProvider = ({ children }) => {
   // Key to get amount of seconds from URL query
   const [queryKeySeconds] = useState('s');
 
+  // Key to get amount of minutes from URL query
+  const [queryKeyMinutes] = useState('m');
+
   // Key to turn on JSON export/import via URL query
   const [queryKeyExport] = useState('export');
   const [showExport, setShowExport] = useState(false);
@@ -16,6 +19,7 @@ const ConfigProvider = ({ children }) => {
   return (
     <ConfigContext.Provider value={{
       queryKeySeconds,
+      queryKeyMinutes,
       replaceHistoryEntry,
       queryKeyExport,
       showExport,
