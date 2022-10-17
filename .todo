@@ -124,7 +124,7 @@ Countdown:
     + feat: Accept minutes via URL query parameters
       Артём Бахарев: Было бы круто иметь возможность написать m=7
     + docs: Update README
-    - chore: Bump project version to 0.5.0
+    + chore: Bump project version to 0.5.0
     
   1.0.0:
     - feat: Share countdowns
